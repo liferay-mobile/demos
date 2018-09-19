@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 		int backgroundColor =
 			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
 		int textColor = Color.WHITE;
-		String message = getString(R.string.loading_failed);
+		String message = getString(R.string.login_failed);
 
 		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, textColor,
 			icon);

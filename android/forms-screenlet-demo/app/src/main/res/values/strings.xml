@@ -2,5 +2,5 @@
     <string name="app_name">FormsScreenletDemo</string>
     <string name="form_button">Form</string>
     <string name="home">Home</string>
-    <string name="loading_failed">Loading Failed</string>
+    <string name="login_failed">Login Failed</string>
 </resources>
