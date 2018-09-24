@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<dimen name="home_button_margin_bottom">20dp</dimen>
+	<dimen name="home_menu_height">24dp</dimen>
+	<dimen name="home_menu_width">24dp</dimen>
+	<dimen name="home_subtitle_margin_bottom">28dp</dimen>
+	<dimen name="home_subtitle_text_size">18sp</dimen>
+	<dimen name="home_text_margin_line_space_extra">6sp</dimen>
+	<dimen name="home_title_margin_horizontal">20dp</dimen>
+	<dimen name="home_title_margin_bottom">6dp</dimen>
+	<dimen name="home_title_text_size">44sp</dimen>
 	<dimen name="login_button_height">40dp</dimen>
 	<dimen name="login_margin_top">24dp</dimen>
 	<dimen name="login_text_size">16sp</dimen>
@@ -7,4 +16,9 @@
 	<dimen name="padding_horizontal_login">16dp</dimen>
 	<dimen name="padding_vertical_login">16dp</dimen>
 	<dimen name="toolbar_elevation">4dp</dimen>
+	<dimen name="toolbar_title_margin_left">24dp</dimen>
+	<dimen name="toolbar_title_text_size">20sp</dimen>
+
+
+
 </resources>

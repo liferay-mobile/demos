@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">FormsScreenletDemo</string>
+    <string name="default_email">test@liferay.com</string>
+    <string name="default_password">test</string>
     <string name="form_button">Form</string>
+    <string name="insurances">Insurances</string>
     <string name="home">Home</string>
+    <string name="home_subtitle">We have coverage options to protect your car against just about anything.</string>
+    <string name="home_title">Your next car insurance.</string>
     <string name="login">Login</string>
     <string name="login_failed">Login Failed</string>
     <string name="login_tgf">Login to TGF</string>
