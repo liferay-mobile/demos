@@ -20,18 +20,26 @@
 			android:id="@+id/login_toolbar"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:title="@string/login"
 			android:background="@color/white"
 			android:elevation="@dimen/toolbar_elevation"
-			android:textStyle="bold"
 			android:titleTextColor="@color/toolbar_text_color"
-			/>
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/login"
+				android:textSize="@dimen/toolbar_title_text_size"
+				/>
+
+		</android.widget.Toolbar>
 
 		<com.liferay.mobile.screens.auth.login.LoginScreenlet
 			android:id="@+id/login"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_margin="@dimen/margin_login"
+			app:credentialsStorage="shared_preferences"
 			app:layoutId="@layout/layout_login"
 			/>
 
