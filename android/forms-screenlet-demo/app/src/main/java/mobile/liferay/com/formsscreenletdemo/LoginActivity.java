@@ -9,9 +9,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
+import com.liferay.mobile.screens.context.LiferayScreensContext;
+import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.User;
+import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
 import com.liferay.mobile.screens.util.AndroidUtil;
 import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
 
@@ -21,24 +25,40 @@ import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
 public class LoginActivity extends AppCompatActivity implements LoginListener {
 
 	private CoordinatorLayout coordinatorLayout;
+	private LoginScreenlet loginScreenlet;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_login);
 
+		LiferayScreensContext.init(this);
+		SessionContext.loadStoredCredentialsAndServer(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
+
 		coordinatorLayout = findViewById(R.id.coordinator);
-		LoginScreenlet loginScreenlet = findViewById(R.id.login);
+		loginScreenlet = findViewById(R.id.login);
 		loginScreenlet.setListener(this);
 
 		FormsUtil.setLightStatusBar(this, getWindow());
+
+		setDefaultValues();
+
+		if(SessionContext.hasUserInfo()){
+			startHomeActivity();
+		}
+
+	}
+
+	private void startHomeActivity(){
+		Intent intent = new Intent(this, HomeActivity.class);
+		finish();
+		startActivity(intent);
+
 	}
 
 	@Override
 	public void onLoginSuccess(User user) {
-		Intent intent = new Intent(this, HomeActivity.class);
-		startActivity(intent);
+		startHomeActivity();
 	}
 
 	@Override
@@ -56,5 +76,13 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 	@Override
 	public void onAuthenticationBrowserShown() {
 
+	}
+
+	private void setDefaultValues() {
+		EditText login = loginScreenlet.findViewById(R.id.liferay_login);
+		login.setText(getString(R.string.default_email));
+
+		EditText password = loginScreenlet.findViewById(R.id.liferay_password);
+		password.setText(getString(R.string.default_password));
 	}
 }
