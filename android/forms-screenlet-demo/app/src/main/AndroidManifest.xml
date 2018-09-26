@@ -10,15 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/lexicon_theme">
         <activity android:name=".LoginActivity">
+        </activity>
+        <activity android:name=".FormsActivity">
+        </activity>
+        <activity android:name=".HomeActivity">
+        </activity>
+        <activity android:name=".SplashActivity"
+	        android:theme="@style/CustomActionBar"
+	        android:fitsSystemWindows="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".FormsActivity">
-        </activity>
-        <activity android:name=".HomeActivity">
         </activity>
     </application>
 
