@@ -77,6 +77,13 @@ public class HomeActivity extends AppCompatActivity {
 	public void selectDrawerItem(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.sign_out:
+
+				SessionContext.logout();
+				SessionContext.removeStoredCredentials(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
+				Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+				finish();
+				startActivity(intent);
+
 				break;
 		}
 	}
