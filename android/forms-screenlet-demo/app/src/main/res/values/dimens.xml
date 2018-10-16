@@ -18,6 +18,7 @@
 	<dimen name="toast_padding">16dp</dimen>
 	<dimen name="padding_horizontal_login">16dp</dimen>
 	<dimen name="padding_vertical_login">16dp</dimen>
+	<dimen name="signup_information_padding">20dp</dimen>
 	<dimen name="toolbar_elevation">4dp</dimen>
 	<dimen name="toolbar_title_margin_left">24dp</dimen>
 	<dimen name="toolbar_title_text_size">20sp</dimen>

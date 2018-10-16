@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/coordinator_signup"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		>
+
+		<TextView
+			android:text="@string/signup_screenlet_signup_form_to_register_a_new_user_in_liferay"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:padding="@dimen/signup_information_padding"
+			/>
+
+		<com.liferay.mobile.screens.auth.signup.SignUpScreenlet
+			android:id="@+id/signup_screenlet"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			/>
+
+	</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

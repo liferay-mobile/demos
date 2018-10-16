@@ -20,8 +20,10 @@
 	<string name="not_now">NOT NOW</string>
 	<string name="password">Password</string>
 	<string name="request_completed">Request Completed</string>
+	<string name="signup_screenlet_signup_form_to_register_a_new_user_in_liferay">Signup Screenlet: Signup form to register a new user in Liferay.</string>
 	<string name="request_failed">Request Failed</string>
 	<string name="sign_out">Sign Out</string>
+	<string name="uppercase_signup">SIGN UP</string>
 	<string name="uppercase_login">LOGIN</string>
 	<string name="we_have_coverage_options_to_protect_your_car_against_just_about_anything">We have coverage options to protect your car against just about anything.</string>
 	<string name="your_login">Your Login</string>
