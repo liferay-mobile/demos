@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<dimen name="forgot_password_information_padding">20dp</dimen>
 	<dimen name="home_button_margin_bottom">20dp</dimen>
 	<dimen name="home_menu_height">24dp</dimen>
 	<dimen name="home_menu_width">24dp</dimen>
