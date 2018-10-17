@@ -7,6 +7,9 @@
 			android:id="@+id/blog_postings"
 			android:title="@string/insurance_blog"/>
 		<item
+			android:id="@+id/take_care"
+			android:title="@string/take_care_of_your_car"/>
+		<item
 			android:id="@+id/sign_out"
 			android:title="@string/sign_out"/>
 	</group>

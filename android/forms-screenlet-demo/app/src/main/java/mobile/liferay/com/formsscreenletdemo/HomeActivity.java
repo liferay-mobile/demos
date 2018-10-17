@@ -97,6 +97,11 @@ public class HomeActivity extends AppCompatActivity {
 				Intent intentBlogPostings = new Intent(HomeActivity.this, BlogPostingsActivity.class);
 				startActivity(intentBlogPostings);
 				break;
+			case R.id.take_care:
+				startTakeCareListActivity();
+
+				break;
+
 			case R.id.sign_out:
 
 				SessionContext.logout();
@@ -107,6 +112,12 @@ public class HomeActivity extends AppCompatActivity {
 
 				break;
 		}
+	}
+
+	private void startTakeCareListActivity() {
+		Intent intent = new Intent(this, TakeCareListActivity.class);
+		finish();
+		startActivity(intent);
 	}
 
 	private void checkForDraft() {
