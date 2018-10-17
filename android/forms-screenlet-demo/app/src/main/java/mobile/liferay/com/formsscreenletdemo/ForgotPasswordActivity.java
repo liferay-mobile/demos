@@ -31,10 +31,9 @@ public class ForgotPasswordActivity extends AppCompatActivity implements ForgotP
 	public void onForgotPasswordRequestSuccess(boolean passwordSent) {
 		int backgroundColor =
 			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.green_default);
-		int textColor = Color.WHITE;
 		String message = getString(R.string.request_completed);
 
-		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, textColor);
+		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE);
 	}
 
 	@Override
@@ -42,10 +41,10 @@ public class ForgotPasswordActivity extends AppCompatActivity implements ForgotP
 		int icon = R.drawable.default_error_icon;
 		int backgroundColor =
 			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
-		int textColor = Color.WHITE;
+
 		String message = getString(R.string.request_failed);
 
-		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, textColor,
+		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor,Color.WHITE,
 			icon);
 	}
 

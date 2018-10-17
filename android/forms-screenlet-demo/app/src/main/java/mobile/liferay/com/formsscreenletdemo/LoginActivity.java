@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 import com.liferay.mobile.screens.context.LiferayScreensContext;
@@ -37,7 +38,7 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 
 		FormsUtil.setLightStatusBar(this, getWindow());
 
-		View forgotPasswordText = findViewById(R.id.liferay_forgot_link);
+		TextView forgotPasswordText = findViewById(R.id.liferay_forgot_link);
 		forgotPasswordText.setOnClickListener(this::startForgotPasswordActivity);
 
 		setDefaultValues();
