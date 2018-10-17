@@ -44,7 +44,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements ForgotP
 
 		String message = getString(R.string.request_failed);
 
-		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor,Color.WHITE,
+		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE,
 			icon);
 	}
 
