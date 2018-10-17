@@ -33,10 +33,9 @@ public class SignUpActivity extends AppCompatActivity implements SignUpListener 
 	public void onSignUpSuccess(User user) {
 		int backgroundColor =
 			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.green_default);
-		int textColor = Color.WHITE;
 		String message = getString(R.string.request_completed);
 
-		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, textColor);
+		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE);
 
 		startLoginActivity();
 	}
@@ -46,14 +45,13 @@ public class SignUpActivity extends AppCompatActivity implements SignUpListener 
 		int icon = R.drawable.default_error_icon;
 		int backgroundColor =
 			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
-		int textColor = Color.WHITE;
 		String message = getString(R.string.request_failed);
 
-		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, textColor,
+		AndroidUtil.showCustomSnackbar(coordinatorLayout, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE,
 			icon);
 	}
 
-	private void startLoginActivity(){
+	private void startLoginActivity() {
 		Intent intent = new Intent(this, LoginActivity.class);
 		finish();
 		startActivity(intent);
