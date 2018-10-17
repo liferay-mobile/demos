@@ -18,6 +18,13 @@
 		app:srcCompat="@mipmap/ic_launcher_round"
 		/>
 
+	<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+		android:id="@+id/user_portrait"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:scenario="portrait"
+		/>
+
 	<TextView
 		android:id="@+id/user_name"
 		android:layout_width="match_parent"

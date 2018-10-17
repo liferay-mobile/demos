@@ -1,8 +1,11 @@
 package mobile.liferay.com.formsscreenletdemo;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,11 +22,15 @@ import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
 import com.liferay.mobile.screens.ddm.form.model.FormInstanceRecord;
 import com.liferay.mobile.screens.ddm.form.service.APIOFetchLatestDraftService;
+import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
+import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
+import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import kotlin.Unit;
 import mobile.liferay.com.formsscreenletdemo.service.APIOFetchResourceService;
 import mobile.liferay.com.formsscreenletdemo.util.Constants;
 import mobile.liferay.com.formsscreenletdemo.util.FormsUtil;
+import mobile.liferay.com.formsscreenletdemo.util.PersonUtil;
 
 /**
  * @author Luísa Lima
@@ -33,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
 
 	private DrawerLayout drawerLayout;
 	private NavigationView navigationView;
+	private ThingScreenlet userPortrait;
 	private Toolbar toolbar;
 	private TextView userName;
 
@@ -51,6 +59,14 @@ public class HomeActivity extends AppCompatActivity {
 		}
 
 		setupNavigationDrawer();
+
+		if (savedInstanceState == null) {
+			try {
+				loadResource();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
@@ -107,6 +123,16 @@ public class HomeActivity extends AppCompatActivity {
 		new APIOFetchLatestDraftService().fetchLatestDraft(thing, this::onDraftLoaded, this::logError);
 	}
 
+	private void loadResource() throws Exception {
+		String url =
+			PersonUtil.getResourcePath(getResources().getString(R.string.liferay_server),
+				SessionContext.getUserId());
+
+		ApioGraph.INSTANCE.clearGraph();
+
+		userPortrait.load(url, Detail.INSTANCE, SessionContext.getCredentialsFromCurrentSession(), thingScreenlet -> Unit.INSTANCE, e -> showError(e.getMessage()));
+	}
+
 	private Unit onDraftLoaded(Thing thing) {
 		if (thing != null) {
 			FormInstanceRecord formInstanceRecord = FormInstanceRecord.getConverter().invoke(thing);
@@ -160,6 +186,19 @@ public class HomeActivity extends AppCompatActivity {
 		View navHeaderView = navigationView.getHeaderView(0);
 		userName = navHeaderView.findViewById(R.id.user_name);
 		userName.setText(SessionContext.getCurrentUser().getFullName());
+
+		userPortrait = navHeaderView.findViewById(R.id.user_portrait);
+	}
+
+	private Unit showError(String message) {
+
+		int icon = R.drawable.default_error_icon;
+		int backgroundColor =
+			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
+
+		AndroidUtil.showCustomSnackbar(userPortrait, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE, icon);
+
+		return Unit.INSTANCE;
 	}
 
 	private void startFormActivity(View view) {
