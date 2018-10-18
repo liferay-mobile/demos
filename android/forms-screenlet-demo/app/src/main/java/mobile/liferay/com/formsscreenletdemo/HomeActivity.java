@@ -23,7 +23,8 @@ import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
 import com.liferay.mobile.screens.ddm.form.model.FormInstanceRecord;
 import com.liferay.mobile.screens.ddm.form.service.APIOFetchLatestDraftService;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
+import com.liferay.mobile.screens.thingscreenlet.screens.views.Custom;
+import com.liferay.mobile.screens.thingscreenlet.screens.views.custom.PersonPortraitView;
 import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.util.LiferayLogger;
 import kotlin.Unit;
@@ -43,6 +44,8 @@ public class HomeActivity extends AppCompatActivity {
 	private ThingScreenlet userPortrait;
 	private Toolbar toolbar;
 	private TextView userName;
+	private final int PORTRAIT_WiDTH = 90;
+	private final int PORTRAIT_HEIGHT = 90;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -128,9 +131,14 @@ public class HomeActivity extends AppCompatActivity {
 			PersonUtil.getResourcePath(getResources().getString(R.string.liferay_server),
 				SessionContext.getUserId());
 
-		ApioGraph.INSTANCE.clearGraph();
+		userPortrait.load(url, new Custom("portrait"), SessionContext.getCredentialsFromCurrentSession(),
+			thingScreenlet -> {
+				setPortraitSize(thingScreenlet);
 
-		userPortrait.load(url, Detail.INSTANCE, SessionContext.getCredentialsFromCurrentSession(), thingScreenlet -> Unit.INSTANCE, e -> showError(e.getMessage()));
+				return Unit.INSTANCE;
+			}, e -> showError(e.getMessage()));
+
+
 	}
 
 	private Unit onDraftLoaded(Thing thing) {
@@ -143,6 +151,14 @@ public class HomeActivity extends AppCompatActivity {
 		}
 
 		return Unit.INSTANCE;
+	}
+
+	private void setPortraitSize(ThingScreenlet thingScreenlet) {
+		PersonPortraitView portraitView =
+			thingScreenlet.findViewById(com.liferay.mobile.screens.R.id.image_view);
+
+		portraitView.getImageView().getLayoutParams().height = PORTRAIT_WiDTH;
+		portraitView.getImageView().getLayoutParams().width = PORTRAIT_HEIGHT;
 	}
 
 	private void setupDrawerContent(NavigationView navigationView) {

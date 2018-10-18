@@ -32,4 +32,7 @@
 	<dimen name="dialog_button_text_size">15sp</dimen>
 	<dimen name="dialog_button_margin">12dp</dimen>
 	<dimen name="dialog_button_size_padding">18dp</dimen>
+	<dimen name="nav_header_padding">16dp</dimen>
+	<dimen name="nav_header_height">160dp</dimen>
+	<dimen name="nav_header_user_portrait">10dp</dimen>
 </resources>
