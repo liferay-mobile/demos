@@ -99,6 +99,8 @@ public class HomeActivity extends AppCompatActivity {
 				break;
 			case R.id.take_care:
 				startTakeCareListActivity();
+			case R.id.special_offers:
+				startSpecialOffersActivity();
 
 				break;
 
@@ -116,6 +118,11 @@ public class HomeActivity extends AppCompatActivity {
 
 	private void startTakeCareListActivity() {
 		Intent intent = new Intent(this, TakeCareListActivity.class);
+		startActivity(intent);
+	}
+
+	private void startSpecialOffersActivity() {
+		Intent intent = new Intent(this, SpecialOffersActivity.class);
 		startActivity(intent);
 	}
 

@@ -10,6 +10,9 @@
 			android:id="@+id/take_care"
 			android:title="@string/take_care_of_your_car"/>
 		<item
+			android:id="@+id/special_offers"
+			android:title="@string/special_offers"/>
+		<item
 			android:id="@+id/sign_out"
 			android:title="@string/sign_out"/>
 	</group>

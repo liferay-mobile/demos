@@ -50,5 +50,7 @@
 		</activity>
 		<activity android:name=".TakeCareVideoActivity">
 		</activity>
+		<activity android:name=".SpecialOffersActivity">
+		</activity>
 	</application>
 </manifest>
