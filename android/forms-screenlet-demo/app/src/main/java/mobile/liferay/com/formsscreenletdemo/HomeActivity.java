@@ -116,7 +116,6 @@ public class HomeActivity extends AppCompatActivity {
 
 	private void startTakeCareListActivity() {
 		Intent intent = new Intent(this, TakeCareListActivity.class);
-		finish();
 		startActivity(intent);
 	}
 

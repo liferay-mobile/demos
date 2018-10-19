@@ -12,7 +12,8 @@
 		android:id="@+id/asset_list_screenlet"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		app:autoLoad="false"
+		app:classNameId="20008"
+		app:groupId="20142"
 		/>
 
 </LinearLayout>
