@@ -22,8 +22,8 @@ import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
-import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
-import com.liferay.mobile.formsscreenletdemo.util.PersonUtil;
+import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
+import com.liferay.mobile.formsscreenletdemo.util.ResourceUtil;
 import com.liferay.mobile.formsscreenletdemo.view.login.LoginActivity;
 import com.liferay.mobile.formsscreenletdemo.view.sessions.SpecialOffersActivity;
 import com.liferay.mobile.formsscreenletdemo.view.sessions.TakeCareListActivity;
@@ -154,7 +154,7 @@ public class HomeActivity extends AppCompatActivity {
 
 	private void checkForDraft() {
 		String server = getResources().getString(R.string.liferay_server);
-		String url = FormsUtil.getResourcePath(server, Constants.FORM_INSTANCE_ID);
+		String url = ResourceUtil.getResourcePath(server, Constants.FORM_INSTANCE_ID, ResourceType.FORMS);
 
 		new APIOFetchResourceService().fetchResource(url, this::onThingLoaded, this::logError);
 	}
@@ -174,8 +174,8 @@ public class HomeActivity extends AppCompatActivity {
 	}
 
 	private void loadPortrait() throws Exception {
-		String url =
-			PersonUtil.getResourcePath(getResources().getString(R.string.liferay_server), SessionContext.getUserId());
+		String url = ResourceUtil.getResourcePath(getResources().getString(R.string.liferay_server),
+			SessionContext.getUserId(), ResourceType.PERSON);
 
 		userPortrait.load(url, new Custom("portrait"), SessionContext.getCredentialsFromCurrentSession());
 	}

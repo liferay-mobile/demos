@@ -15,7 +15,9 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.apio.consumer.model.Thing;
-import com.liferay.mobile.formsscreenletdemo.util.CredentialsUtil;
+import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
+import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
+import com.liferay.mobile.formsscreenletdemo.util.ResourceUtil;
 import com.liferay.mobile.screens.base.ModalProgressBarWithLabel;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.events.ScreenletEvents;
@@ -27,7 +29,6 @@ import com.liferay.mobile.screens.viewsets.defaultviews.ddm.events.FormEvents;
 import kotlin.Unit;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
-import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,7 +56,7 @@ public class FormsActivity extends AppCompatActivity
 		formsScreenlet.setScreenletEvents(this);
 		swipeRefreshLayout.setOnRefreshListener(this);
 
-		FormsUtil.setLightStatusBar(this, getWindow());
+		DemoUtil.setLightStatusBar(this, getWindow());
 
 		if (savedInstanceState == null) {
 			loadResource();
@@ -63,15 +64,15 @@ public class FormsActivity extends AppCompatActivity
 	}
 
 	private void loadResource() {
-		String url =
-			FormsUtil.getResourcePath(getResources().getString(R.string.liferay_server), Constants.FORM_INSTANCE_ID);
+		String url = ResourceUtil.getResourcePath(getResources().getString(R.string.liferay_server),
+			Constants.FORM_INSTANCE_ID, ResourceType.FORMS);
 
 		progressBar.show(getString(R.string.loading_form));
 		formsScreenlet.setVisibility(View.GONE);
 
 		ThingsCache.clearCache();
 
-		formsScreenlet.load(url, Detail.INSTANCE, CredentialsUtil.getCredentials(), thingScreenlet -> {
+		formsScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {
 			hideProgress();
 			errorLayout.setVisibility(View.GONE);
 

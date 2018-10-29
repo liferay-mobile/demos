@@ -5,15 +5,20 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.Window;
 import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.screens.context.SessionContext;
 
 /**
+ * @author Luísa Lima
  * @author Victor Oliveira
  */
-public class FormsUtil {
+public class DemoUtil {
 
-	public static String getResourcePath(String serverURL, long formInstanceId) {
-		String formEndpoint = "/o/api/p/form/%d?embedded=structure";
-		return serverURL + String.format(formEndpoint, formInstanceId);
+	public static String getCredentials() {
+		try {
+			return SessionContext.getCredentialsFromCurrentSession();
+		} catch (Exception e) {
+			return "";
+		}
 	}
 
 	public static void setLightStatusBar(Context context, Window window) {

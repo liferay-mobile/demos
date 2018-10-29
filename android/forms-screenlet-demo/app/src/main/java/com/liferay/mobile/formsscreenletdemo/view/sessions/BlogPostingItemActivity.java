@@ -5,7 +5,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.liferay.apio.consumer.cache.ThingsCache;
-import com.liferay.mobile.formsscreenletdemo.util.CredentialsUtil;
+import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
 import kotlin.Unit;
@@ -42,7 +42,7 @@ public class BlogPostingItemActivity extends AppCompatActivity implements SwipeR
 
 		String url = getIntent().getStringExtra(THING_ID_EXTRA);
 
-		blogItemScreenlet.load(url, Detail.INSTANCE, CredentialsUtil.getCredentials(), thingScreenlet -> {
+		blogItemScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {
 			hideProgress();
 
 			return Unit.INSTANCE;

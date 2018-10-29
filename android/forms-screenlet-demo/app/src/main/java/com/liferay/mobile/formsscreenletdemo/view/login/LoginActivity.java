@@ -11,13 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.formsscreenletdemo.view.HomeActivity;
 import com.liferay.mobile.screens.auth.login.LoginListener;
 import com.liferay.mobile.screens.auth.login.LoginScreenlet;
 import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.formsscreenletdemo.R;
-import com.liferay.mobile.formsscreenletdemo.util.FormsUtil;
 
 /**
  * @author Luísa Lima
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements LoginListener {
 		loginScreenlet = findViewById(R.id.login);
 		loginScreenlet.setListener(this);
 
-		FormsUtil.setLightStatusBar(this, getWindow());
+		DemoUtil.setLightStatusBar(this, getWindow());
 
 		TextView forgotPasswordText = findViewById(R.id.liferay_forgot_link);
 		forgotPasswordText.setOnClickListener(this::startForgotPasswordActivity);

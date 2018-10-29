@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.apio.consumer.model.Thing;
-import com.liferay.mobile.formsscreenletdemo.util.CredentialsUtil;
+import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
+import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
+import com.liferay.mobile.formsscreenletdemo.util.ResourceUtil;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.events.ScreenletEvents;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.BaseView;
@@ -15,7 +17,6 @@ import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.Scenario;
 import kotlin.Unit;
 import com.liferay.mobile.formsscreenletdemo.R;
-import com.liferay.mobile.formsscreenletdemo.util.BlogsUtil;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -50,11 +51,10 @@ public class BlogPostingsActivity extends AppCompatActivity implements SwipeRefr
 
 		ThingsCache.clearCache();
 
-		String url =
-			BlogsUtil.getCollectionResourcePath(getResources().getString(R.string.liferay_server),
-				Constants.CONTENT_SPACE_ID);
+		String url = ResourceUtil.getResourcePath(getResources().getString(R.string.liferay_server),
+			Constants.CONTENT_SPACE_ID, ResourceType.BLOGS);
 
-		blogsScreenlet.load(url, Detail.INSTANCE, CredentialsUtil.getCredentials(), thingScreenlet -> {
+		blogsScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {
 			hideProgress();
 
 			return Unit.INSTANCE;
