@@ -9,7 +9,6 @@ import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
-import com.liferay.mobile.formsscreenletdemo.util.ResourceUtil;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.events.ScreenletEvents;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.BaseView;
@@ -51,7 +50,7 @@ public class BlogPostingsActivity extends AppCompatActivity implements SwipeRefr
 
 		ThingsCache.clearCache();
 
-		String url = ResourceUtil.getResourcePath(getResources().getString(R.string.liferay_server),
+		String url = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
 			Constants.CONTENT_SPACE_ID, ResourceType.BLOGS);
 
 		blogsScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {

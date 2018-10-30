@@ -17,7 +17,6 @@ import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
-import com.liferay.mobile.formsscreenletdemo.util.ResourceUtil;
 import com.liferay.mobile.screens.base.ModalProgressBarWithLabel;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.events.ScreenletEvents;
@@ -64,7 +63,7 @@ public class FormsActivity extends AppCompatActivity
 	}
 
 	private void loadResource() {
-		String url = ResourceUtil.getResourcePath(getResources().getString(R.string.liferay_server),
+		String url = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
 			Constants.FORM_INSTANCE_ID, ResourceType.FORMS);
 
 		progressBar.show(getString(R.string.loading_form));
