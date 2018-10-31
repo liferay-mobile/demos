@@ -40,7 +40,6 @@ public class FormsActivity extends AppCompatActivity
 
 	private LinearLayout errorLayout;
 	private ThingScreenlet formsScreenlet;
-	private Toolbar toolbar;
 	private ModalProgressBarWithLabel progressBar;
 	private SwipeRefreshLayout swipeRefreshLayout;
 
@@ -48,9 +47,7 @@ public class FormsActivity extends AppCompatActivity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_forms);
-		toolbar = findViewById(R.id.forms_toolbar);
-		toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.toolbar_text_color));
-		setSupportActionBar(toolbar);
+		setupToolbar();
 
 		formsScreenlet = findViewById(R.id.forms_screenlet);
 		errorLayout = findViewById(R.id.form_detail_error_view);
@@ -59,7 +56,6 @@ public class FormsActivity extends AppCompatActivity
 		progressBar.disableDimBackground();
 		formsScreenlet.setScreenletEvents(this);
 		swipeRefreshLayout.setOnRefreshListener(this);
-
 
 		DemoUtil.setLightStatusBar(this, getWindow());
 
@@ -80,7 +76,6 @@ public class FormsActivity extends AppCompatActivity
 		formsScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {
 			hideProgress();
 			errorLayout.setVisibility(View.GONE);
-			//getSupportActionBar().setTitle(getTitle());
 			recyclerViewWorkaround();
 
 			return Unit.INSTANCE;
@@ -106,6 +101,12 @@ public class FormsActivity extends AppCompatActivity
 		progressBar.hide();
 		swipeRefreshLayout.setRefreshing(false);
 		formsScreenlet.setVisibility(View.VISIBLE);
+	}
+
+	private void setupToolbar() {
+		Toolbar toolbar = findViewById(R.id.forms_toolbar);
+		toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.toolbar_text_color));
+		setSupportActionBar(toolbar);
 	}
 
 	private Unit showError(String message) {
