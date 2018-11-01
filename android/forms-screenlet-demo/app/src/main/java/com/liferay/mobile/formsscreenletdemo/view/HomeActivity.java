@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.presenter.HomePresenter;
 import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
@@ -46,60 +47,46 @@ import org.json.JSONException;
  */
 public class HomeActivity extends AppCompatActivity {
 
+	public ThingScreenlet userPortrait;
 	private DrawerLayout drawerLayout;
+	private HomePresenter homePresenter = new HomePresenter();
 	private NavigationView navigationView;
-	private ThingScreenlet userPortrait;
 	private Toolbar toolbar;
 	private TextView userName;
-	private static final int PORTRAIT_WIDTH = 90;
-	private static final int PORTRAIT_HEIGHT = 90;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+
 		toolbar = findViewById(R.id.home_toolbar);
 		setSupportActionBar(toolbar);
-		setupForPushNotification();
+
+		homePresenter.onActivityCreated(this);
 
 		Button formButton = findViewById(R.id.forms_button);
 		formButton.setOnClickListener(this::startFormActivity);
 
 		if (savedInstanceState == null) {
-			checkForDraft();
+			homePresenter.checkForDraft();
 		}
 
 		setupNavigationDrawer();
 
 		if (savedInstanceState == null) {
 			try {
-				loadPortrait();
+				homePresenter.loadPortrait();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	private void setupForPushNotification() {
-		Session session = SessionContext.createSessionFromCurrentSession();
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
 
-		try {
-			Push.with(session).withPortalVersion(71).onSuccess(jsonObject -> {
-
-				try {
-					String registrationId = jsonObject.getString("token");
-					LiferayLogger.d("Device registrationId: " + registrationId);
-				} catch (JSONException e) {
-					LiferayLogger.e(e.getMessage(), e);
-				}
-
-			}).onFailure(e -> {
-				LiferayLogger.e(e.getMessage(), e);
-			}).register(this, getString(R.string.push_sender_id));
-
-		} catch (Exception e) {
-			LiferayLogger.e(e.getMessage(), e);
-		}
+		homePresenter.onActivityDestroyed();
 	}
 
 	@Override
@@ -124,72 +111,23 @@ public class HomeActivity extends AppCompatActivity {
 	public void selectDrawerItem(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.blog_postings:
-				startActivity(BlogPostingsActivity.class);
+				startDemoActivity(BlogPostingsActivity.class);
 				break;
 			case R.id.take_care:
-				startActivity(TakeCareListActivity.class);
+				startDemoActivity(TakeCareListActivity.class);
 				break;
 			case R.id.special_offers:
-				startActivity(SpecialOffersActivity.class);
+				startDemoActivity(SpecialOffersActivity.class);
 				break;
 			case R.id.sign_out:
-				signOut();
+				homePresenter.signOut();
 				break;
 		}
 	}
 
-	private void signOut() {
-		SessionContext.logout();
-		SessionContext.removeStoredCredentials(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
-
-		finish();
-
-		startActivity(LoginActivity.class);
-	}
-
-	private void startActivity(Class<?> clazz) {
+	public void startDemoActivity(Class<?> clazz) {
 		Intent intent = new Intent(this, clazz);
 		startActivity(intent);
-	}
-
-	private void checkForDraft() {
-		String server = getResources().getString(R.string.liferay_server);
-		String url = DemoUtil.getResourcePath(server, Constants.FORM_INSTANCE_ID, ResourceType.FORMS);
-
-		new APIOFetchResourceService().fetchResource(url, this::onThingLoaded, this::logError);
-	}
-
-	private Unit logError(Exception e) {
-		LiferayLogger.e(e.getMessage());
-		return Unit.INSTANCE;
-	}
-
-	private Unit onThingLoaded(Thing thing) {
-		loadDraft(thing);
-		return Unit.INSTANCE;
-	}
-
-	private void loadDraft(Thing thing) {
-		new APIOFetchLatestDraftService().fetchLatestDraft(thing, this::onDraftLoaded, this::logError);
-	}
-
-	private void loadPortrait() throws Exception {
-		String url = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
-			SessionContext.getUserId(), ResourceType.PERSON);
-
-		userPortrait.load(url, new Custom("portrait"), SessionContext.getCredentialsFromCurrentSession());
-	}
-
-	private Unit onDraftLoaded(Thing thing) {
-		if (thing != null) {
-			FormInstanceRecord formInstanceRecord = FormInstanceRecord.getConverter().invoke(thing);
-
-			if (formInstanceRecord != null) {
-				setupDialog();
-			}
-		}
-
-		return Unit.INSTANCE;
 	}
 
 	private void setupDrawerContent(NavigationView navigationView) {
@@ -199,7 +137,7 @@ public class HomeActivity extends AppCompatActivity {
 		});
 	}
 
-	private void setupDialog() {
+	public void setupDialog() {
 		LayoutInflater inflater = getLayoutInflater();
 		View dialogView = inflater.inflate(R.layout.custom_dialog, null);
 		Button positiveButton = dialogView.findViewById(R.id.dialog_positive_button);
@@ -235,17 +173,6 @@ public class HomeActivity extends AppCompatActivity {
 		userName.setText(SessionContext.getCurrentUser().getFullName());
 
 		userPortrait = navHeaderView.findViewById(R.id.user_portrait);
-	}
-
-	private Unit showError(String message) {
-
-		int icon = R.drawable.default_error_icon;
-		int backgroundColor =
-			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
-
-		AndroidUtil.showCustomSnackbar(userPortrait, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE, icon);
-
-		return Unit.INSTANCE;
 	}
 
 	private void startFormActivity(View view) {
