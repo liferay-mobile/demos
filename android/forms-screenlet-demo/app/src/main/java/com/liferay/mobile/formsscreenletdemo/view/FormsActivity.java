@@ -16,6 +16,8 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.apio.consumer.model.Thing;
+import com.liferay.mobile.formsscreenletdemo.presenter.FormsPresenter;
+import com.liferay.mobile.formsscreenletdemo.presenter.FormsViewContract;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
 import com.liferay.mobile.screens.base.ModalProgressBarWithLabel;
@@ -36,18 +38,22 @@ import org.jetbrains.annotations.Nullable;
  * @author Luísa Lima
  */
 public class FormsActivity extends AppCompatActivity
-	implements ScreenletEvents, SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnChildScrollUpCallback {
+	implements ScreenletEvents, SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnChildScrollUpCallback,
+	FormsViewContract.FormsView {
 
-	private LinearLayout errorLayout;
-	private ThingScreenlet formsScreenlet;
-	private ModalProgressBarWithLabel progressBar;
+	public LinearLayout errorLayout;
+	public ThingScreenlet formsScreenlet;
+	public ModalProgressBarWithLabel progressBar;
 	private SwipeRefreshLayout swipeRefreshLayout;
+	private FormsPresenter formsPresenter = new FormsPresenter();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_forms);
 		setupToolbar();
+
+		formsPresenter.onCreateActivity(this);
 
 		formsScreenlet = findViewById(R.id.forms_screenlet);
 		errorLayout = findViewById(R.id.form_detail_error_view);
@@ -60,32 +66,21 @@ public class FormsActivity extends AppCompatActivity
 		DemoUtil.setLightStatusBar(this, getWindow());
 
 		if (savedInstanceState == null) {
-			loadResource();
+			formsPresenter.loadResource();
 		}
 	}
 
-	private void loadResource() {
-		String url = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
-			Constants.FORM_INSTANCE_ID, ResourceType.FORMS);
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
 
-		progressBar.show(getString(R.string.loading_form));
-		formsScreenlet.setVisibility(View.GONE);
-
-		ThingsCache.clearCache();
-
-		formsScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {
-			hideProgress();
-			errorLayout.setVisibility(View.GONE);
-			recyclerViewWorkaround();
-
-			return Unit.INSTANCE;
-		}, e -> showError(e.getMessage()));
+		formsPresenter.onActivityDestroyed();
 	}
 
 	/*
 	 * TODO: Find another solution
 	 */
-	private void recyclerViewWorkaround() {
+	public void recyclerViewWorkaround() {
 		ScrollView scrollView = formsScreenlet.findViewById(R.id.multipage_scroll_view);
 
 		swipeRefreshLayout.getViewTreeObserver().addOnScrollChangedListener(() -> {
@@ -97,7 +92,7 @@ public class FormsActivity extends AppCompatActivity
 		});
 	}
 
-	private void hideProgress() {
+	public void hideProgress() {
 		progressBar.hide();
 		swipeRefreshLayout.setRefreshing(false);
 		formsScreenlet.setVisibility(View.VISIBLE);
@@ -109,7 +104,7 @@ public class FormsActivity extends AppCompatActivity
 		setSupportActionBar(toolbar);
 	}
 
-	private Unit showError(String message) {
+	public Unit showError(String message) {
 		hideProgress();
 
 		int icon = R.drawable.default_error_icon;
@@ -154,7 +149,7 @@ public class FormsActivity extends AppCompatActivity
 
 	@Override
 	public void onRefresh() {
-		loadResource();
+		formsPresenter.loadResource();
 	}
 
 	@Override

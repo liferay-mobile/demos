@@ -12,8 +12,8 @@ public interface HomeViewContract {
 		void onSignOutCompleted();
 
 		void showDraftDialog();
-
 	}
+
 	interface HomePresenter {
 
 		void checkForDraft();
@@ -27,6 +27,5 @@ public interface HomeViewContract {
 		void onActivityDestroyed();
 
 		void signOut();
-
 	}
 }
