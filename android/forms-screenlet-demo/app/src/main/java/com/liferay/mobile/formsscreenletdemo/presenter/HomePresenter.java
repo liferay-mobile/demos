@@ -23,6 +23,7 @@ import org.json.JSONException;
  * @author Luísa Lima
  */
 public class HomePresenter implements HomeViewContract.HomePresenter {
+
 	private HomeActivity homeActivity;
 
 	@Override
@@ -46,13 +47,12 @@ public class HomePresenter implements HomeViewContract.HomePresenter {
 	}
 
 	@Override
-	public void loadPortrait() throws Exception {
+	public void loadUserPortrait() throws Exception {
 		String url = DemoUtil.getResourcePath(this.homeActivity.getResources().getString(R.string.liferay_server),
 			SessionContext.getUserId(), ResourceType.PERSON);
 
 		homeActivity.userPortrait.load(url, new Custom("portrait"),
 			SessionContext.getCredentialsFromCurrentSession());
-
 	}
 
 	private Unit onThingLoaded(Thing thing) {
@@ -65,14 +65,12 @@ public class HomePresenter implements HomeViewContract.HomePresenter {
 
 		try {
 			Push.with(session).withPortalVersion(71).onSuccess(jsonObject -> {
-
 				try {
 					String registrationId = jsonObject.getString("token");
 					LiferayLogger.d("Device registrationId: " + registrationId);
 				} catch (JSONException e) {
 					LiferayLogger.e(e.getMessage(), e);
 				}
-
 			}).onFailure(e -> {
 				LiferayLogger.e(e.getMessage(), e);
 			}).register(this.homeActivity, this.homeActivity.getString(R.string.push_sender_id));
@@ -92,7 +90,7 @@ public class HomePresenter implements HomeViewContract.HomePresenter {
 			FormInstanceRecord formInstanceRecord = FormInstanceRecord.getConverter().invoke(thing);
 
 			if (formInstanceRecord != null) {
-				this.homeActivity.setupDialog();
+				this.homeActivity.showDraftDialog();
 			}
 		}
 
@@ -104,11 +102,11 @@ public class HomePresenter implements HomeViewContract.HomePresenter {
 		SessionContext.logout();
 		SessionContext.removeStoredCredentials(CredentialsStorageBuilder.StorageType.SHARED_PREFERENCES);
 
-		this.homeActivity.finish();
-		this.homeActivity.startDemoActivity(LoginActivity.class);
+		this.homeActivity.onSignOutCompleted();
 	}
 
 	private Unit logError(Exception e) {
 		LiferayLogger.e(e.getMessage());
-		return Unit.INSTANCE;	}
+		return Unit.INSTANCE;
+	}
 }

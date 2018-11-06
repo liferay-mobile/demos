@@ -21,6 +21,7 @@ import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.formsscreenletdemo.presenter.HomePresenter;
+import com.liferay.mobile.formsscreenletdemo.presenter.HomeViewContract;
 import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
@@ -45,7 +46,7 @@ import org.json.JSONException;
  * @author Luísa Lima
  * @author Victor Oliveira
  */
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements HomeViewContract.HomeView{
 
 	public ThingScreenlet userPortrait;
 	private DrawerLayout drawerLayout;
@@ -75,7 +76,7 @@ public class HomeActivity extends AppCompatActivity {
 
 		if (savedInstanceState == null) {
 			try {
-				homePresenter.loadPortrait();
+				homePresenter.loadUserPortrait();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -108,16 +109,16 @@ public class HomeActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void selectDrawerItem(MenuItem item) {
+	private void selectDrawerItem(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.blog_postings:
-				startDemoActivity(BlogPostingsActivity.class);
+				startActivity(BlogPostingsActivity.class);
 				break;
 			case R.id.take_care:
-				startDemoActivity(TakeCareListActivity.class);
+				startActivity(TakeCareListActivity.class);
 				break;
 			case R.id.special_offers:
-				startDemoActivity(SpecialOffersActivity.class);
+				startActivity(SpecialOffersActivity.class);
 				break;
 			case R.id.sign_out:
 				homePresenter.signOut();
@@ -125,7 +126,7 @@ public class HomeActivity extends AppCompatActivity {
 		}
 	}
 
-	public void startDemoActivity(Class<?> clazz) {
+	private void startActivity(Class<?> clazz) {
 		Intent intent = new Intent(this, clazz);
 		startActivity(intent);
 	}
@@ -137,7 +138,7 @@ public class HomeActivity extends AppCompatActivity {
 		});
 	}
 
-	public void setupDialog() {
+	public void showDraftDialog() {
 		LayoutInflater inflater = getLayoutInflater();
 		View dialogView = inflater.inflate(R.layout.custom_dialog, null);
 		Button positiveButton = dialogView.findViewById(R.id.dialog_positive_button);
@@ -178,5 +179,10 @@ public class HomeActivity extends AppCompatActivity {
 	private void startFormActivity(View view) {
 		Intent intent = new Intent(HomeActivity.this, FormsActivity.class);
 		startActivity(intent);
+	}
+
+	public void onSignOutCompleted() {
+		finish();
+		startActivity(LoginActivity.class);
 	}
 }
