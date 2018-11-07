@@ -1,4 +1,4 @@
-package com.liferay.mobile.formsscreenletdemo.presenter;
+package com.liferay.mobile.formsscreenletdemo.contract;
 
 import com.liferay.mobile.formsscreenletdemo.view.FormsActivity;
 import kotlin.Unit;
@@ -7,7 +7,7 @@ import kotlin.Unit;
  * @author Luísa Lima
  */
 public interface FormsViewContract {
-	interface  FormsView {
+	interface FormsView {
 
 		void hideProgress();
 
@@ -15,8 +15,8 @@ public interface FormsViewContract {
 
 		Unit showError(String message);
 	}
-	
-	interface  FormsPresenter {
+
+	interface FormsPresenter {
 
 		void onCreateActivity(FormsActivity formsActivity);
 

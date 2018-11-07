@@ -3,6 +3,7 @@ package com.liferay.mobile.formsscreenletdemo.presenter;
 import android.view.View;
 import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.contract.FormsViewContract;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.formsscreenletdemo.util.ResourceType;

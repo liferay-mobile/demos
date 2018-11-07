@@ -1,4 +1,4 @@
-package com.liferay.mobile.formsscreenletdemo.presenter;
+package com.liferay.mobile.formsscreenletdemo.contract;
 
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.formsscreenletdemo.view.HomeActivity;
