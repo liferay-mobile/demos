@@ -18,7 +18,7 @@ public interface FormsViewContract {
 
 	interface FormsPresenter {
 
-		void onCreateActivity(FormsActivity formsActivity);
+		void onActivityCreated(FormsActivity formsActivity);
 
 		void onActivityDestroyed();
 

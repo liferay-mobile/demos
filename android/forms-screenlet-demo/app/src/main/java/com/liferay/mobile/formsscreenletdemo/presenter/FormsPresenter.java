@@ -18,7 +18,7 @@ public class FormsPresenter implements FormsViewContract.FormsPresenter {
 
 	private FormsActivity formsActivity;
 
-	public void onCreateActivity(FormsActivity formsActivity) {
+	public void  onActivityCreated(FormsActivity formsActivity) {
 		this.formsActivity = formsActivity;
 	}
 

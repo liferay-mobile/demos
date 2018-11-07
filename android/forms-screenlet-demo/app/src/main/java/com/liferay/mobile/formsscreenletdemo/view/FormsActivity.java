@@ -49,7 +49,7 @@ public class FormsActivity extends AppCompatActivity
 		setContentView(R.layout.activity_forms);
 		setupToolbar();
 
-		formsPresenter.onCreateActivity(this);
+		formsPresenter.onActivityCreated(this);
 
 		formsScreenlet = findViewById(R.id.forms_screenlet);
 		errorLayout = findViewById(R.id.form_detail_error_view);
