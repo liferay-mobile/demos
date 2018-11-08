@@ -58,6 +58,7 @@
 		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.WorkflowActivity">
 		</activity>
         <activity android:name="com.liferay.mobile.formsscreenletdemo.view.MyPoliciesActivity" />
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.PolicyActivity"></activity>
 
 		<receiver
 			android:name=".push.PushReceiver"
