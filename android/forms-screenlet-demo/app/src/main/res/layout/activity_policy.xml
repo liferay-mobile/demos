@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context="com.liferay.mobile.formsscreenletdemo.view.PolicyActivity">
 
@@ -15,9 +16,21 @@
         android:background="@color/white"
         app:titleTextColor="@color/toolbar_text_color"/>
 
-    <com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet
-        android:id="@+id/my_policy"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet
+                android:id="@+id/my_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
+
+    </FrameLayout>
 
 </LinearLayout>

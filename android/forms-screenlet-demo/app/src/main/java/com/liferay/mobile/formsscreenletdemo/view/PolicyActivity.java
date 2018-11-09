@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.screens.asset.AssetEntry;
@@ -46,7 +49,13 @@ public class PolicyActivity extends AppCompatActivity implements AssetDisplayLis
 
     @Override
     public void onRetrieveAssetSuccess(AssetEntry assetEntry) {
+        LinearLayout linearLayout = findViewById(R.id.liferay_linear_buttons);
+        linearLayout.setVisibility(LinearLayout.GONE);
 
+        TextView textView = findViewById(R.id.liferay_asset_title);
+        textView.setVisibility(TextView.GONE);
+
+        toolbar.setTitle(assetEntry.getTitle());
     }
 
     @Override
