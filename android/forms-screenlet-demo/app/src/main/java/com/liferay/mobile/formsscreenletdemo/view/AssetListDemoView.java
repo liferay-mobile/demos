@@ -1,6 +1,8 @@
 package com.liferay.mobile.formsscreenletdemo.view;
 
 import android.content.Context;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
 import com.liferay.mobile.formsscreenletdemo.R;
@@ -33,5 +35,10 @@ public class AssetListDemoView extends BaseListScreenletView<AssetEntry, BaseLis
     @Override
     protected int getItemLayoutId() {
         return R.layout.layout_policy_item;
+    }
+
+    @Override
+    protected RecyclerView.ItemDecoration getDividerDecoration() {
+        return new DividerItemDecoration(getContext(), 0);
     }
 }
