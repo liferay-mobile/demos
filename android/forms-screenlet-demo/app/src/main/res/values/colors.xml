@@ -3,9 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="item_text_color_default">#de000000</color>
+    <color name="item_text_color_checked">#0b5fff</color>
     <color name="login_status_bar_color">#E0E0E0</color>
     <color name="toolbar_text_color">#0C0C0D</color>
     <color name="white">#FFFFFF</color>
     <color name="toast_background">#323232</color>
 	<color name="policy_item_line_color">#1e000000</color>
+    <color name="item_icon_color">#0b5fff</color>
 </resources>

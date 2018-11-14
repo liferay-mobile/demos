@@ -24,9 +24,10 @@
 		android:layout_gravity="start"
 		android:fitsSystemWindows="true"
 		android:theme="@style/AppTheme"
-		app:itemTextColor="@color/lightBlue3_lexicon"
 		app:headerLayout="@layout/nav_header"
 		app:menu="@menu/drawer_menu"
+		app:itemIconTint="@color/item_icon_color"
+		app:itemTextAppearance="@style/ItemTextTheme"
 		/>
 
 </android.support.v4.widget.DrawerLayout>
