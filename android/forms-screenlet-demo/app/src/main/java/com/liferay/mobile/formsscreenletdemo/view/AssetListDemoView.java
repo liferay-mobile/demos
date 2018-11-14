@@ -12,6 +12,9 @@ import com.liferay.mobile.screens.base.list.BaseListAdapter;
 import com.liferay.mobile.screens.base.list.BaseListScreenletView;
 import com.liferay.mobile.screens.viewsets.defaultviews.asset.list.AssetListAdapter;
 
+/**
+ * @author Luísa Lima
+ */
 public class AssetListDemoView extends BaseListScreenletView<AssetEntry, BaseListAdapter.ViewHolder, AssetListAdapter>
         implements AssetListViewModel {
 

@@ -136,6 +136,4 @@ public class PdfDisplayDemoView extends PdfDisplayView {
 		progressBar.setVisibility(GONE);
 		progressText.setVisibility(GONE);
 	}
-
-
 }
