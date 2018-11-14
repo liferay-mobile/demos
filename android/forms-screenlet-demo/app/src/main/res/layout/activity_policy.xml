@@ -21,13 +21,15 @@
         android:layout_height="match_parent">
 
         <ScrollView
+            android:id="@+id/scroll_view_policy"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet
                 android:id="@+id/my_policy"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:pdflayoutId="@layout/layout_pdf_display_demo_view"/>
 
         </ScrollView>
 

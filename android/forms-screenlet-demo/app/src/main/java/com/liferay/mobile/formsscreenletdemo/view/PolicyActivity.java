@@ -49,12 +49,6 @@ public class PolicyActivity extends AppCompatActivity implements AssetDisplayLis
 
     @Override
     public void onRetrieveAssetSuccess(AssetEntry assetEntry) {
-        LinearLayout linearLayout = findViewById(R.id.liferay_linear_buttons);
-        linearLayout.setVisibility(LinearLayout.GONE);
-
-        TextView textView = findViewById(R.id.liferay_asset_title);
-        textView.setVisibility(TextView.GONE);
-
         toolbar.setTitle(assetEntry.getTitle());
     }
 
