@@ -65,8 +65,8 @@ public class PdfDisplayDemoView extends PdfDisplayView {
 	}
 
 	private void hideElements() {
-		linearLayoutButtons.setVisibility(VISIBLE);
-		title.setVisibility(VISIBLE);
+		linearLayoutButtons.setVisibility(GONE);
+		title.setVisibility(GONE);
 	}
 
 }
