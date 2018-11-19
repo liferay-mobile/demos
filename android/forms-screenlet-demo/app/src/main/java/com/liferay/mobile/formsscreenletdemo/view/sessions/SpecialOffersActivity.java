@@ -14,40 +14,38 @@ import com.liferay.mobile.screens.web.WebScreenletConfiguration;
 
 public class SpecialOffersActivity extends AppCompatActivity implements WebListener {
 
-    WebScreenlet webScreenlet;
+	WebScreenlet webScreenlet;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_special_offers);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_special_offers);
 
-        webScreenlet = findViewById(R.id.web_screenlet);
-        webScreenlet.setListener(this);
-        webScreenlet.setWebScreenletConfiguration(
-            new WebScreenletConfiguration.Builder("/web/guest/special-offers")
-                .addRawCss(R.raw.special_offers_custom, "special_offers_custom.css")
-                .load()
-        );
-        webScreenlet.load();
-    }
+		webScreenlet = findViewById(R.id.web_screenlet);
+		webScreenlet.setListener(this);
+		webScreenlet.setWebScreenletConfiguration(
+			new WebScreenletConfiguration.Builder("/web/guest/special-offers").addRawCss(R.raw.special_offers_custom,
+				"special_offers_custom.css").load());
+		webScreenlet.load();
+	}
 
-    @Override
-    public void error(Exception e, String userAction) {
-        int icon = R.drawable.default_error_icon;
-        int backgroundColor =
-            ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
+	@Override
+	public void error(Exception e, String userAction) {
+		int icon = R.drawable.default_error_icon;
+		int backgroundColor =
+			ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
 
-        AndroidUtil.showCustomSnackbar(webScreenlet, userAction, Snackbar.LENGTH_LONG, backgroundColor,
-            Color.WHITE, icon);
-    }
+		AndroidUtil.showCustomSnackbar(webScreenlet, userAction, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE,
+			icon);
+	}
 
-    @Override
-    public void onPageLoaded(String url) {
+	@Override
+	public void onPageLoaded(String url) {
 
-    }
+	}
 
-    @Override
-    public void onScriptMessageHandler(String namespace, String body) {
+	@Override
+	public void onScriptMessageHandler(String namespace, String body) {
 
-    }
+	}
 }
