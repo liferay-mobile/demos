@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.screens.util.AndroidUtil;
 import com.liferay.mobile.screens.web.WebListener;
@@ -14,7 +13,7 @@ import com.liferay.mobile.screens.web.WebScreenletConfiguration;
 
 public class SpecialOffersActivity extends AppCompatActivity implements WebListener {
 
-	WebScreenlet webScreenlet;
+	private WebScreenlet webScreenlet;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +23,11 @@ public class SpecialOffersActivity extends AppCompatActivity implements WebListe
 		webScreenlet = findViewById(R.id.web_screenlet);
 		webScreenlet.setListener(this);
 
-		WebScreenletConfiguration config = new WebScreenletConfiguration.Builder("/web/guest/special-offers")
-				.addRawCss(R.raw.special_offers_custom, "special_offers_custom.css")
+		WebScreenletConfiguration configuration = new WebScreenletConfiguration.Builder("/web/guest/special-offers")
+				.addRawCss(R.raw.special_offers_custom,"special_offers_custom.css")
 				.load();
 
-		webScreenlet.setWebScreenletConfiguration(config);
+		webScreenlet.setWebScreenletConfiguration(configuration);
 		webScreenlet.load();
 	}
 
@@ -44,11 +43,9 @@ public class SpecialOffersActivity extends AppCompatActivity implements WebListe
 
 	@Override
 	public void onPageLoaded(String url) {
-
 	}
 
 	@Override
 	public void onScriptMessageHandler(String namespace, String body) {
-
 	}
 }

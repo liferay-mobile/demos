@@ -29,7 +29,6 @@
 
 	</android.support.v7.widget.Toolbar>
 
-
 	<com.liferay.mobile.screens.web.WebScreenlet
 		android:id="@+id/web_screenlet"
 		android:layout_width="match_parent"
