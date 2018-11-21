@@ -44,4 +44,12 @@
 	<dimen name="policy_item_title_margin_top">17dp</dimen>
 	<dimen name="policy_item_title_margin_bottom">11dp</dimen>
 	<dimen name="policy_item_line_height">1dp</dimen>
+	<dimen name="help_text_size">16sp</dimen>
+	<dimen name="help_padding_top">22dp</dimen>
+	<dimen name="help_icon_width">18dp</dimen>
+	<dimen name="help_icon_height">21dp</dimen>
+	<dimen name="help_icon_margin_left">19dp</dimen>
+	<dimen name="help_icon_margin_right">35dp</dimen>
+	<dimen name="help_text_margin_bottom">11dp</dimen>
+	<dimen name="help_line_height">1dp</dimen>
 </resources>

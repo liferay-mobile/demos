@@ -17,6 +17,11 @@
 			android:id="@+id/special_offers"
 			android:title="@string/special_offers"/>
 		<item
+			android:id="@+id/help"
+			android:icon="@mipmap/help_icon"
+			android:title="@string/help"
+			/>
+		<item
 			android:id="@+id/sign_out"
 			android:title="@string/sign_out"/>
 	</group>

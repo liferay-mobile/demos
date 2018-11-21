@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="com.liferay.mobile.formsscreenletdemo.view.HelpActivity"
+	>
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/help_toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:elevation="@dimen/toolbar_elevation"
+		app:title="@string/help"
+		app:titleTextColor="@color/toolbar_text_color"
+		/>
+
+	<LinearLayout
+		android:id="@+id/faq"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:paddingTop="@dimen/help_padding_top"
+		>
+
+		<ImageView
+			android:layout_width="@dimen/help_icon_width"
+			android:layout_height="@dimen/help_icon_height"
+			android:src="@mipmap/faq_icon"
+			android:layout_marginLeft="@dimen/help_icon_margin_left"
+			android:layout_marginRight="@dimen/help_icon_margin_right"
+			/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/faq"
+				android:textColor="@color/help_text_color"
+				android:textStyle="normal"
+				android:textSize="@dimen/help_text_size"
+				android:layout_marginBottom="@dimen/help_text_margin_bottom"
+
+				/>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/help_line_height"
+				android:layout_gravity="bottom"
+				android:background="@color/help_line_color"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/contact_suport"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:paddingTop="@dimen/help_padding_top"
+		>
+
+		<ImageView
+			android:layout_width="@dimen/help_icon_width"
+			android:layout_height="@dimen/help_icon_height"
+			android:src="@mipmap/support_icon"
+			android:layout_marginLeft="@dimen/help_icon_margin_left"
+			android:layout_marginRight="@dimen/help_icon_margin_right"
+			/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/contact_support"
+				android:textStyle="normal"
+				android:textSize="@dimen/help_text_size"
+				android:layout_marginBottom="@dimen/help_text_margin_bottom"
+
+				/>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/help_line_height"
+				android:layout_gravity="bottom"
+				android:background="@color/help_line_color"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

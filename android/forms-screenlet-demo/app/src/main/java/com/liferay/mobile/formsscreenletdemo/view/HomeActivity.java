@@ -135,6 +135,9 @@ public class HomeActivity extends AppCompatActivity {
 			case R.id.special_offers:
 				startActivity(SpecialOffersActivity.class);
 				break;
+			case R.id.help:
+				startActivity(HelpActivity.class);
+				break;
 			case R.id.sign_out:
 				signOut();
 				break;
