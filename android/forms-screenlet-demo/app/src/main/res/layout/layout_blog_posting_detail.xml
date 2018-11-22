@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.liferay.mobile.screens.thingscreenlet.screens.views.detail.BlogPostingDetailView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+		android:id="@+id/creator_avatar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		app:scenario="portrait"
+		/>
+
+	<TextView
+		android:id="@+id/headline"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/faq_detail_margin_top"
+		android:lineSpacingExtra="6sp"
+		android:textStyle="bold"
+		android:textSize="@dimen/faq_detail_text_size"
+		android:textColor="@color/faq_detail_text_color"
+		/>
+
+	<TextView
+		android:id="@+id/article_body"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/headline"
+		android:lineSpacingExtra="8sp"
+		android:paddingTop="@dimen/faq_detail_padding_top"
+		android:textColor="@color/faq_detail_article_body_text_color"
+		android:textSize="16sp"
+		android:textStyle="normal"
+		/>
+
+</com.liferay.mobile.screens.thingscreenlet.screens.views.detail.BlogPostingDetailView>

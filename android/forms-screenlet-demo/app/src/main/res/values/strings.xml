@@ -1,6 +1,8 @@
 <resources>
+	<string name="about_tfg">About TFG</string>
 	<string name="app_name">TGF</string>
 	<string name="create_your_account_to_get_started">Create your account to get started.</string>
+	<string name="contact_support">Contact Support</string>
 	<string name="continue_">CONTINUE</string>
 	<string name="continue_insurance_quote_form">Continue Insurance Quote form?</string>
 	<string name="could_not_load_form">Could not load Form</string>
@@ -9,11 +11,13 @@
 	<string name="default_email">test@liferay.com</string>
 	<string name="default_password">test</string>
 	<string name="enter_your_email_address_to_reset_your_password">Enter your email address to reset your password.</string>
+	<string name="faq">FAQ</string>
 	<string name="forgot_password">Forgot Password?</string>
 	<string name="form_button">Form</string>
 	<string name="get_insurance_quote">GET INSURANCE QUOTE</string>
 	<string name="insurance_quote">Insurance Quote</string>
 	<string name="insurances">Insurances</string>
+	<string name="help">Help</string>
 	<string name="home">Home</string>
 	<string name="loading_form">Loading Form....</string>
 	<string name="login">Login</string>
@@ -21,6 +25,8 @@
 	<string name="my_policies">My Policies</string>
 	<string name="not_now">NOT NOW</string>
 	<string name="password">Password</string>
+	<string name="payment">Payment</string>
+	<string name="popular">Popular</string>
 	<string name="request_completed">Request Completed</string>
 	<string name="request_failed">Request Failed</string>
 	<string name="special_offers">Special Offers</string>
@@ -36,8 +42,6 @@
 	<string name="your_information_was_successfully_sent">Your information was successfully sent.</string>
 	<string name="insurance_blog">Insurance Blog</string>
 	<string name="sorry_workflow_is_not_read_yet">Sorry. Workflow Screenlet is not read yet.</string>
+	<string name="was_this_article_useful">Was this article useful? </string>
 	<string name="workflow">Workflow</string>
-	<string name="help">Help</string>
-	<string name="faq">FAQ</string>
-	<string name="contact_support">Contact Support</string>
 </resources>

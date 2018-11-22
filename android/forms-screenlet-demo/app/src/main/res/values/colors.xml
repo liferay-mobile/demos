@@ -11,6 +11,10 @@
     <color name="toast_background">#323232</color>
     <color name="policy_item_line_color">#1e000000</color>
     <color name="item_icon_color">#0b5fff</color>
+	<color name="section_text_color">#80000000</color>
 	<color name="help_text_color">#de000000</color>
 	<color name="help_line_color">#1e000000</color>
+	<color name="faq_item_line_color">#1e000000</color>
+	<color name="faq_detail_text_color">#b3000000</color>
+	<color name="faq_detail_article_body_text_color">#de000000</color>
 </resources>
