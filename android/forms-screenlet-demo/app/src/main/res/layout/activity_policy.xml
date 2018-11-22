@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.liferay.mobile.formsscreenletdemo.view.PolicyActivity">
+    tools:context="com.liferay.mobile.formsscreenletdemo.view.PolicyDetailActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_policy_toolbar"

@@ -57,9 +57,9 @@
 		</activity>
 		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.WorkflowActivity">
 		</activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.MyPoliciesActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.PoliciesListActivity">
 		</activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.PolicyActivity">
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.PolicyDetailActivity">
 		</activity>
 
 		<receiver

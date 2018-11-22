@@ -21,7 +21,7 @@ import java.util.List;
  * @author Vitória Mendes
  * @author Luísa Lima
  */
-public class MyPoliciesActivity extends AppCompatActivity implements BaseListListener<AssetEntry> {
+public class PoliciesListActivity extends AppCompatActivity implements BaseListListener<AssetEntry> {
 
     private AssetListScreenlet assetListScreenlet;
     private Toolbar toolbar;
@@ -56,7 +56,7 @@ public class MyPoliciesActivity extends AppCompatActivity implements BaseListLis
 
     @Override
     public void onListItemSelected(AssetEntry element, View view) {
-        Intent intent = new Intent(this, PolicyActivity.class);
+        Intent intent = new Intent(this, PolicyDetailActivity.class);
         intent.putExtra(ENTRY_ID, Long.valueOf(element.getValues().get(ENTRY_ID).toString()));
         startActivity(intent);
     }

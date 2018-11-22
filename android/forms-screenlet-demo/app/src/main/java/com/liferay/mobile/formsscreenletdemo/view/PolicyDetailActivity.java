@@ -1,16 +1,12 @@
 package com.liferay.mobile.formsscreenletdemo.view;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.screens.asset.AssetEntry;
 import com.liferay.mobile.screens.asset.display.AssetDisplayInnerScreenletListener;
@@ -23,7 +19,7 @@ import com.liferay.mobile.screens.util.AndroidUtil;
  * @author Vitória Mendes
  * @author Luísa Lima
  */
-public class PolicyActivity extends AppCompatActivity implements AssetDisplayListener, AssetDisplayInnerScreenletListener {
+public class PolicyDetailActivity extends AppCompatActivity implements AssetDisplayListener, AssetDisplayInnerScreenletListener {
 
     private AssetDisplayScreenlet assetDisplayScreenlet;
     private Toolbar toolbar;

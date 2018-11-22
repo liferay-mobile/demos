@@ -124,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
 	public void selectDrawerItem(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.my_policies:
-				startActivity(MyPoliciesActivity.class);
+				startActivity(PoliciesListActivity.class);
 				break;
 			case R.id.blog_postings:
 				startActivity(BlogPostingsActivity.class);
