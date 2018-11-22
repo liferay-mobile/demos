@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.util.Constants;
 import com.liferay.mobile.screens.asset.AssetEntry;
 import com.liferay.mobile.screens.asset.list.AssetListScreenlet;
 import com.liferay.mobile.screens.base.list.BaseListListener;
@@ -25,7 +26,6 @@ public class PoliciesListActivity extends AppCompatActivity implements BaseListL
 
     private AssetListScreenlet assetListScreenlet;
     private Toolbar toolbar;
-    private final String ENTRY_ID = "entryId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class PoliciesListActivity extends AppCompatActivity implements BaseListL
     @Override
     public void onListItemSelected(AssetEntry element, View view) {
         Intent intent = new Intent(this, PolicyDetailActivity.class);
-        intent.putExtra(ENTRY_ID, Long.valueOf(element.getValues().get(ENTRY_ID).toString()));
+        intent.putExtra(Constants.ENTRY_ID_KEY, Long.valueOf(element.getValues().get(Constants.ENTRY_ID_KEY).toString()));
         startActivity(intent);
     }
 

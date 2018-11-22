@@ -10,5 +10,6 @@ public interface Constants {
 	String BLOG_POSTING_ENDPOINT = "/o/api/p/content-space/%d/blog-posting";
 	String FORM_ENDPOINT = "/o/api/p/form/%d?embedded=structure";
 	String PERSON_ENDPOINT = "/o/api/p/user-account/%d";
+	String ENTRY_ID_KEY = "entryId";
 }
 

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.util.Constants;
 import com.liferay.mobile.screens.asset.AssetEntry;
 import com.liferay.mobile.screens.asset.display.AssetDisplayInnerScreenletListener;
 import com.liferay.mobile.screens.asset.display.AssetDisplayListener;
@@ -23,7 +24,6 @@ public class PolicyDetailActivity extends AppCompatActivity implements AssetDisp
 
     private AssetDisplayScreenlet assetDisplayScreenlet;
     private Toolbar toolbar;
-    private final String ENTRY_ID = "entryId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class PolicyDetailActivity extends AppCompatActivity implements AssetDisp
 
         assetDisplayScreenlet = findViewById(R.id.my_policy);
 
-        long entryId = getIntent().getLongExtra(ENTRY_ID, 0);
+        long entryId = getIntent().getLongExtra(Constants.ENTRY_ID_KEY, 0);
 
         assetDisplayScreenlet.setEntryId(entryId);
         assetDisplayScreenlet.loadAsset();
