@@ -87,7 +87,6 @@ public class FaqListActivity extends AppCompatActivity implements ScreenletEvent
 	@Override
 	public <T extends BaseView> void onCustomEvent(@NotNull String name, @NotNull ThingScreenlet screenlet,
 		@Nullable T parentView, @NotNull Thing thing) {
-
 	}
 
 }

@@ -64,5 +64,7 @@
 			android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
 			android:visibility="gone"
 			/>
+		
 	</RelativeLayout>
+
 </com.liferay.mobile.screens.thingscreenlet.screens.views.row.BlogPostingRowView>
