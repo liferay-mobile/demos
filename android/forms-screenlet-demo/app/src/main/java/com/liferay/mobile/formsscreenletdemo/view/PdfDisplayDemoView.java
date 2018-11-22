@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.screens.viewsets.defaultviews.dlfile.display.PdfDisplayView;
 
 /**
@@ -41,20 +42,20 @@ public class PdfDisplayDemoView extends PdfDisplayView {
 	protected void onFinishInflate() {
 		super.onFinishInflate();
 
-		imagePdf = findViewById(com.liferay.mobile.screens.R.id.liferay_pdf_renderer);
+		imagePdf = findViewById(R.id.liferay_pdf_renderer);
 
-		progressText = findViewById(com.liferay.mobile.screens.R.id.liferay_asset_progress_number);
-		progressBarHorizontal = findViewById(com.liferay.mobile.screens.R.id.liferay_asset_progress_horizontal);
+		progressText = findViewById(R.id.liferay_asset_progress_number);
+		progressBarHorizontal = findViewById(R.id.liferay_asset_progress_horizontal);
 
-		goToPage = findViewById(com.liferay.mobile.screens.R.id.liferay_go_to_page);
-		goToPageButton = findViewById(com.liferay.mobile.screens.R.id.liferay_go_to_page_submit);
+		goToPage = findViewById(R.id.liferay_go_to_page);
+		goToPageButton = findViewById(R.id.liferay_go_to_page_submit);
 
-		previousPage = findViewById(com.liferay.mobile.screens.R.id.liferay_previous_page);
-		nextPage = findViewById(com.liferay.mobile.screens.R.id.liferay_next_page);
+		previousPage = findViewById(R.id.liferay_previous_page);
+		nextPage = findViewById(R.id.liferay_next_page);
 
-		linearLayoutButtons = findViewById(com.liferay.mobile.screens.R.id.liferay_linear_buttons);
+		linearLayoutButtons = findViewById(R.id.liferay_linear_buttons);
 
-		title = findViewById(com.liferay.mobile.screens.R.id.liferay_asset_title);
+		title = findViewById(R.id.liferay_asset_title);
 	}
 
 	@Override
