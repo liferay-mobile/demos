@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/faq_coordinator"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		tools:context="com.liferay.mobile.formsscreenletdemo.view.FaqActivity"
+		>
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/faq_toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:elevation="@dimen/toolbar_elevation"
+			android:background="@color/white"
+			app:title=" "
+			/>
+
+		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+			android:id="@+id/faq_content"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/faq_content_margin_left"
+			android:layout_marginRight="@dimen/faq_content_margin_right"
+			/>
+
+	</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -65,6 +65,8 @@
 		</activity>
 		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.FaqListActivity">
 		</activity>
+		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.FaqActivity">
+		</activity>
 
 		<receiver
 			android:name=".push.PushReceiver"
