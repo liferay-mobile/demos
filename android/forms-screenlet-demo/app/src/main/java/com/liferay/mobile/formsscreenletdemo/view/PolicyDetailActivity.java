@@ -1,20 +1,17 @@
 package com.liferay.mobile.formsscreenletdemo.view;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
+import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.screens.asset.AssetEntry;
 import com.liferay.mobile.screens.asset.display.AssetDisplayInnerScreenletListener;
 import com.liferay.mobile.screens.asset.display.AssetDisplayListener;
 import com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet;
 import com.liferay.mobile.screens.base.BaseScreenlet;
-import com.liferay.mobile.screens.util.AndroidUtil;
 
 /**
  * @author Vitória Mendes
@@ -50,13 +47,7 @@ public class PolicyDetailActivity extends AppCompatActivity implements AssetDisp
 
     @Override
     public void error(Exception e, String userAction) {
-        int icon = R.drawable.default_error_icon;
-        int backgroundColor =
-                ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
-        String message = getString(R.string.request_failed);
-
-        AndroidUtil.showCustomSnackbar(assetDisplayScreenlet, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE,
-                icon);
+        DemoUtil.showNegativeSnackBar(this, assetDisplayScreenlet);
     }
 
     @Override

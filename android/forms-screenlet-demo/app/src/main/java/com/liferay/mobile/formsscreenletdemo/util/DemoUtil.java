@@ -1,11 +1,14 @@
 package com.liferay.mobile.formsscreenletdemo.util;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.Window;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.screens.context.SessionContext;
+import com.liferay.mobile.screens.util.AndroidUtil;
 
 /**
  * @author Luísa Lima
@@ -42,5 +45,15 @@ public class DemoUtil {
 	public static void setLightStatusBar(Context context, Window window) {
 		window.setStatusBarColor(ContextCompat.getColor(context, R.color.login_status_bar_color));
 		window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+	}
+
+	public static void showNegativeSnackBar(Context context, View layout) {
+		int icon = R.drawable.default_error_icon;
+		int backgroundColor =
+			ContextCompat.getColor(context, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
+		String message = context.getString(R.string.request_failed);
+
+		AndroidUtil.showCustomSnackbar(layout, message, Snackbar.LENGTH_LONG, backgroundColor, Color.WHITE,
+			icon);
 	}
 }
