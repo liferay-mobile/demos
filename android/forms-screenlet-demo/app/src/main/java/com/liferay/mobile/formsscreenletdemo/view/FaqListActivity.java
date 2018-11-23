@@ -58,10 +58,10 @@ public class FaqListActivity extends AppCompatActivity implements ScreenletEvent
 
 	private void loadFaqPopularListResource() {
 
-		String url = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
+		String thingId = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
 			Constants.CONTENT_SPACE_ID, ResourceType.BLOGS);
 
-		faqPopularList.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
+		faqPopularList.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
 			exception -> Unit.INSTANCE);
 	}
 

@@ -42,9 +42,9 @@ public class FaqDetailActivity extends AppCompatActivity {
 	}
 
 	private void loadResource() {
-		String url = getIntent().getStringExtra(Constants.THING_ID_KEY);
+		String thingId = getIntent().getStringExtra(Constants.THING_ID_KEY);
 
-		faqContent.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
+		faqContent.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
 			exception -> Unit.INSTANCE);
 	}
 
