@@ -25,7 +25,7 @@ public class PolicyDetailActivity extends AppCompatActivity implements AssetDisp
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_policy);
+        setContentView(R.layout.activity_policy_detail);
 
         toolbar = findViewById(R.id.my_policy_toolbar);
         setSupportActionBar(toolbar);

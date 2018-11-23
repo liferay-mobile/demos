@@ -27,7 +27,7 @@ public class PoliciesListActivity extends AppCompatActivity implements BaseListL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_policies);
+        setContentView(R.layout.activity_policies_list);
         toolbar = findViewById(R.id.my_policies_toolbar);
         setSupportActionBar(toolbar);
 
