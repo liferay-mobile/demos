@@ -27,7 +27,7 @@
 		app:headerLayout="@layout/nav_header"
 		app:menu="@menu/drawer_menu"
 		app:itemIconTint="@color/item_icon_color"
-		app:itemTextAppearance="@style/ItemTextTheme"
+		app:itemTextAppearance="@style/MenuItemTextTheme"
 		/>
 
 </android.support.v4.widget.DrawerLayout>
