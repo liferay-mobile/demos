@@ -11,5 +11,6 @@ public interface Constants {
 	String FORM_ENDPOINT = "/o/api/p/form/%d?embedded=structure";
 	String PERSON_ENDPOINT = "/o/api/p/user-account/%d";
 	String ENTRY_ID_KEY = "entryId";
+	String THING_ID_KEY = "thingId";
 }
 
