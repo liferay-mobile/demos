@@ -24,9 +24,9 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @author Luísa Lima
  */
-public class FaqListActivity extends AppCompatActivity implements ScreenletEvents {
+public class FAQListActivity extends AppCompatActivity implements ScreenletEvents {
 
-	private ThingScreenlet faqPopularList;
+	private ThingScreenlet FAQListScreenlet;
 	private Toolbar toolbar;
 
 	@Override
@@ -39,8 +39,8 @@ public class FaqListActivity extends AppCompatActivity implements ScreenletEvent
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-		faqPopularList = findViewById(R.id.faq_polular);
-		faqPopularList.setScreenletEvents(this);
+		FAQListScreenlet = findViewById(R.id.faq_polular);
+		FAQListScreenlet.setScreenletEvents(this);
 
 		BlogPosting.DEFAULT_VIEWS.put(Detail.INSTANCE, R.layout.layout_blog_posting_detail);
 		BlogPosting.DEFAULT_VIEWS.put(Row.INSTANCE, R.layout.layout_blog_posting_row);
@@ -61,7 +61,7 @@ public class FaqListActivity extends AppCompatActivity implements ScreenletEvent
 		String thingId = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
 			Constants.CONTENT_SPACE_ID, ResourceType.BLOGS);
 
-		faqPopularList.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
+		FAQListScreenlet.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
 			exception -> Unit.INSTANCE);
 	}
 
@@ -69,7 +69,7 @@ public class FaqListActivity extends AppCompatActivity implements ScreenletEvent
 	@Override
 	public <T extends BaseView> View.OnClickListener onClickEvent(@NotNull T baseView, @NotNull View view,
 		@NotNull Thing thing) {
-		Intent intent = new Intent(this, FaqDetailActivity.class);
+		Intent intent = new Intent(this, FAQDetailActivity.class);
 		intent.putExtra(Constants.THING_ID_KEY, thing.getId());
 		startActivity(intent);
 

@@ -21,7 +21,7 @@ public class HelpActivity extends AppCompatActivity {
 	}
 
 	private void startActivity() {
-		Intent intent = new Intent(this, FaqListActivity.class);
+		Intent intent = new Intent(this, FAQListActivity.class);
 		startActivity(intent);
 	}
 }
