@@ -15,7 +15,7 @@ import kotlin.Unit;
  */
 public class FAQDetailActivity extends AppCompatActivity {
 
-	private ThingScreenlet FAQDetailScreenlet;
+	private ThingScreenlet faqDetailScreenlet;
 	private Toolbar toolbar;
 
 	@Override
@@ -23,7 +23,7 @@ public class FAQDetailActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_faq_detail);
 
-		FAQDetailScreenlet = findViewById(R.id.faq_content);
+		faqDetailScreenlet = findViewById(R.id.faq_content);
 		toolbar = findViewById(R.id.faq_toolbar);
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -43,7 +43,7 @@ public class FAQDetailActivity extends AppCompatActivity {
 	private void loadResource() {
 		String thingId = getIntent().getStringExtra(Constants.THING_ID_KEY);
 
-		FAQDetailScreenlet.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
+		faqDetailScreenlet.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
 			exception -> Unit.INSTANCE);
 	}
 }

@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public class FAQListActivity extends AppCompatActivity implements ScreenletEvents {
 
-	private ThingScreenlet FAQListScreenlet;
+	private ThingScreenlet faqListScreenlet;
 	private Toolbar toolbar;
 
 	@Override
@@ -39,8 +39,8 @@ public class FAQListActivity extends AppCompatActivity implements ScreenletEvent
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-		FAQListScreenlet = findViewById(R.id.faq_polular);
-		FAQListScreenlet.setScreenletEvents(this);
+		faqListScreenlet = findViewById(R.id.faq_polular);
+		faqListScreenlet.setScreenletEvents(this);
 
 		BlogPosting.DEFAULT_VIEWS.put(Detail.INSTANCE, R.layout.layout_blog_posting_detail);
 		BlogPosting.DEFAULT_VIEWS.put(Row.INSTANCE, R.layout.layout_blog_posting_row);
@@ -62,7 +62,7 @@ public class FAQListActivity extends AppCompatActivity implements ScreenletEvent
 			DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server), Constants.CONTENT_SPACE_ID,
 				ResourceType.BLOGS);
 
-		FAQListScreenlet.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
+		faqListScreenlet.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
 			exception -> Unit.INSTANCE);
 	}
 
