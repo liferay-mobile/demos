@@ -29,7 +29,6 @@ public class FAQDetailActivity extends AppCompatActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-
 		if (savedInstanceState == null) {
 			loadResource();
 		}
@@ -47,5 +46,4 @@ public class FAQDetailActivity extends AppCompatActivity {
 		FAQDetailScreenlet.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
 			exception -> Unit.INSTANCE);
 	}
-
 }

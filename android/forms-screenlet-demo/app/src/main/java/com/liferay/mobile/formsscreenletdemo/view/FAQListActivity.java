@@ -58,8 +58,9 @@ public class FAQListActivity extends AppCompatActivity implements ScreenletEvent
 
 	private void loadFaqPopularListResource() {
 
-		String thingId = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
-			Constants.CONTENT_SPACE_ID, ResourceType.BLOGS);
+		String thingId =
+			DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server), Constants.CONTENT_SPACE_ID,
+				ResourceType.BLOGS);
 
 		FAQListScreenlet.load(thingId, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> Unit.INSTANCE,
 			exception -> Unit.INSTANCE);
@@ -87,5 +88,4 @@ public class FAQListActivity extends AppCompatActivity implements ScreenletEvent
 	public <T extends BaseView> void onCustomEvent(@NotNull String name, @NotNull ThingScreenlet screenlet,
 		@Nullable T parentView, @NotNull Thing thing) {
 	}
-
 }

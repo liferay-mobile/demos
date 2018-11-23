@@ -19,57 +19,57 @@
 		app:titleTextColor="@color/toolbar_text_color"
 		/>
 
-		<TextView
-			android:id="@+id/faq_popular_title"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginLeft="@dimen/faq_list_text_margin_left"
-			android:layout_marginTop="@dimen/faq_list_text_margin_top"
-			android:text="@string/popular"
-			android:textColor="@color/section_text_color"
-			/>
+	<TextView
+		android:id="@+id/faq_popular_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/faq_list_text_margin_left"
+		android:layout_marginTop="@dimen/faq_list_text_margin_top"
+		android:text="@string/popular"
+		android:textColor="@color/section_text_color"
+		/>
 
-		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
-			android:id="@+id/faq_polular"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="@dimen/faq_list_margin_top"
-			/>
+	<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+		android:id="@+id/faq_polular"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/faq_list_margin_top"
+		/>
 
-		<TextView
-			android:id="@+id/faq_payment_title"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginLeft="@dimen/faq_list_text_margin_left"
-			android:layout_marginTop="@dimen/faq_list_text_margin_top"
-			android:text="@string/payment"
-			android:textColor="@color/section_text_color"
-			android:visibility="gone"
-			/>
+	<TextView
+		android:id="@+id/faq_payment_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/faq_list_text_margin_left"
+		android:layout_marginTop="@dimen/faq_list_text_margin_top"
+		android:text="@string/payment"
+		android:textColor="@color/section_text_color"
+		android:visibility="gone"
+		/>
 
-		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
-			android:id="@+id/faq_payment"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="@dimen/faq_list_margin_top"
-			/>
+	<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+		android:id="@+id/faq_payment"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/faq_list_margin_top"
+		/>
 
-		<TextView
-			android:id="@+id/faq_about_tfg_title"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginLeft="@dimen/faq_list_text_margin_left"
-			android:layout_marginTop="@dimen/faq_list_text_margin_top"
-			android:text="@string/about_tfg"
-			android:textColor="@color/section_text_color"
-			android:visibility="gone"
-			/>
+	<TextView
+		android:id="@+id/faq_about_tfg_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="@dimen/faq_list_text_margin_left"
+		android:layout_marginTop="@dimen/faq_list_text_margin_top"
+		android:text="@string/about_tfg"
+		android:textColor="@color/section_text_color"
+		android:visibility="gone"
+		/>
 
-		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
-			android:id="@+id/faq_about_tfg"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="@dimen/faq_list_margin_top"
-			/>
+	<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+		android:id="@+id/faq_about_tfg"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/faq_list_margin_top"
+		/>
 
 </LinearLayout>
