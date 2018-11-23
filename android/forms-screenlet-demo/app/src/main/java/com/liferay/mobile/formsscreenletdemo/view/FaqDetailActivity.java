@@ -13,7 +13,7 @@ import kotlin.Unit;
 /**
  * @author Luísa Lima
  */
-public class FaqActivity extends AppCompatActivity {
+public class FaqDetailActivity extends AppCompatActivity {
 
 	private ThingScreenlet faqContent;
 	private Toolbar toolbar;
@@ -21,7 +21,7 @@ public class FaqActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_faq);
+		setContentView(R.layout.activity_faq_detail);
 
 		faqContent = findViewById(R.id.faq_content);
 		toolbar = findViewById(R.id.faq_toolbar);

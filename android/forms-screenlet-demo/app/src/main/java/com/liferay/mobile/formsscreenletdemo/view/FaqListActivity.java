@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
 import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.formsscreenletdemo.util.Constants;
@@ -70,8 +69,8 @@ public class FaqListActivity extends AppCompatActivity implements ScreenletEvent
 	@Override
 	public <T extends BaseView> View.OnClickListener onClickEvent(@NotNull T baseView, @NotNull View view,
 		@NotNull Thing thing) {
-		Intent intent = new Intent(this, FaqActivity.class);
-		intent.putExtra(FaqActivity.THING_ID_EXTRA, thing.getId());
+		Intent intent = new Intent(this, FaqDetailActivity.class);
+		intent.putExtra(Constants.THING_ID_KEY, thing.getId());
 		startActivity(intent);
 
 		return null;
