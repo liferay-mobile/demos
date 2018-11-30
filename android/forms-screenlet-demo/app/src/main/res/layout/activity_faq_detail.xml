@@ -21,7 +21,8 @@
 			android:layout_height="wrap_content"
 			android:background="@color/white"
 			android:elevation="@dimen/toolbar_elevation"
-			app:title=" "
+			app:title="@string/faq"
+			app:titleTextColor="@color/toolbar_text_color"
 			/>
 
 		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
@@ -30,6 +31,32 @@
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="@dimen/faq_content_margin_left"
 			android:layout_marginRight="@dimen/faq_content_margin_right"
+			/>
+
+		<View
+			android:id="@+id/faq_line"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/view_line_height"
+			android:layout_marginBottom="11dp"
+			android:layout_marginLeft="18dp"
+			android:layout_marginRight="18dp"
+			android:background="@color/view_line_color"
+			/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:lineSpacingExtra="8sp"
+			android:text="@string/was_this_article_useful"
+			android:textSize="16sp"
+			android:textStyle="normal"
+			/>
+
+		<com.liferay.mobile.screens.rating.RatingScreenlet
+			android:id="@+id/faq_rating"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
 			/>
 
 	</LinearLayout>

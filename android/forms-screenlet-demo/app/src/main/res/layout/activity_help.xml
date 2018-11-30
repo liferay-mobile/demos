@@ -54,9 +54,9 @@
 
 			<View
 				android:layout_width="match_parent"
-				android:layout_height="@dimen/help_line_height"
+				android:layout_height="@dimen/view_line_height"
 				android:layout_gravity="bottom"
-				android:background="@color/help_line_color"
+				android:background="@color/view_line_color"
 				/>
 
 		</LinearLayout>
@@ -97,9 +97,9 @@
 
 			<View
 				android:layout_width="match_parent"
-				android:layout_height="@dimen/help_line_height"
+				android:layout_height="@dimen/view_line_height"
 				android:layout_gravity="bottom"
-				android:background="@color/help_line_color"
+				android:background="@color/view_line_color"
 				/>
 
 		</LinearLayout>

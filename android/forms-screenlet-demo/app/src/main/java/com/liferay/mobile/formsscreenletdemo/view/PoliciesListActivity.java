@@ -37,7 +37,7 @@ public class PoliciesListActivity extends AppCompatActivity implements BaseListL
 
     @Override
     public void onListPageFailed(int startRow, Exception e) {
-        DemoUtil.showNegativeSnackBar(this, assetListScreenlet);
+        DemoUtil.showErrorSnackBar(this, assetListScreenlet);
     }
 
     @Override
@@ -54,6 +54,6 @@ public class PoliciesListActivity extends AppCompatActivity implements BaseListL
 
     @Override
     public void error(Exception e, String userAction) {
-        DemoUtil.showNegativeSnackBar(this, assetListScreenlet);
+        DemoUtil.showErrorSnackBar(this, assetListScreenlet);
     }
 }

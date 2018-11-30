@@ -47,7 +47,7 @@ public class PolicyDetailActivity extends AppCompatActivity implements AssetDisp
 
     @Override
     public void error(Exception e, String userAction) {
-        DemoUtil.showNegativeSnackBar(this, assetDisplayScreenlet);
+        DemoUtil.showErrorSnackBar(this, assetDisplayScreenlet);
     }
 
     @Override

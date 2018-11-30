@@ -48,6 +48,7 @@ public class DemoUtil {
 	}
 
 	public static void showNegativeSnackBar(Context context, View layout) {
+	public static void showErrorSnackBar(Context context, View layout) {
 		int icon = R.drawable.default_error_icon;
 		int backgroundColor =
 			ContextCompat.getColor(context, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
