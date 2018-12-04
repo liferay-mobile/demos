@@ -64,4 +64,7 @@
 	<dimen name="faq_content_margin_left">20dp</dimen>
 	<dimen name="faq_content_margin_right">20dp</dimen>
 	<dimen name="view_line_height">1dp</dimen>
+	<dimen name="rating_button_height">29dp</dimen>
+	<dimen name="rating_button_width">78dp</dimen>
+	<dimen name="faq_detail_view_margin">18dp</dimen>
 </resources>

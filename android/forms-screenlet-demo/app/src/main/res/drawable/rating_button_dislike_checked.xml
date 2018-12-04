@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:drawable="@drawable/rating_button_shape_checked"
+		android:height="@dimen/rating_button_height"
+		android:width="@dimen/rating_button_width"/>
+
+	<item
+		android:drawable="@drawable/icon_dislike_white"
+		android:gravity="center"/>
+
+</layer-list>

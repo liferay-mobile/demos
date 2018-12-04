@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.liferay.mobile.formsscreenletdemo.view.ThumbsRatingDemoView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	>
+
+	<ProgressBar
+		android:id="@+id/liferay_rating_progress"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:indeterminateTint="?colorPrimary"
+		android:visibility="gone"
+		/>
+
+	<LinearLayout
+		android:id="@+id/liferay_rating_content"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:visibility="gone"
+		tools:visibility="visible"
+		>
+
+		<FrameLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="7dp"
+			>
+
+			<ImageButton
+				android:id="@+id/positiveRatingButton"
+				android:layout_height="@dimen/rating_button_height"
+				android:layout_width="@dimen/rating_button_width"
+				android:contentDescription="@string/thumbs_up"
+				android:src="@drawable/rating_button_like_unchecked"
+				android:tag="@string/screenlet_rating_button_tag"
+				/>
+
+			<TextView
+				android:id="@+id/positiveRatingCount"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="50dp"
+				android:tag="@string/screenlet_rating_label_tag"
+				android:textColor="@color/textColorPrimary_default"
+				android:visibility="gone"
+				tools:text="Total: 7"
+				/>
+
+		</FrameLayout>
+
+		<FrameLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			>
+
+			<ImageButton
+				android:id="@+id/negativeRatingButton"
+				android:layout_height="@dimen/rating_button_height"
+				android:layout_width="@dimen/rating_button_width"
+				android:contentDescription="@string/thumbs_down"
+				android:src="@drawable/rating_button_dislike_unchecked"
+				android:tag="@string/screenlet_rating_button_tag"
+				/>
+
+			<TextView
+				android:id="@+id/negativeRatingCount"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:tag="@string/screenlet_rating_label_tag"
+				android:textColor="@color/textColorPrimary_default"
+				android:visibility="gone"
+				tools:text="Total: 9"
+				/>
+
+		</FrameLayout>
+
+	</LinearLayout>
+
+</com.liferay.mobile.formsscreenletdemo.view.ThumbsRatingDemoView>
