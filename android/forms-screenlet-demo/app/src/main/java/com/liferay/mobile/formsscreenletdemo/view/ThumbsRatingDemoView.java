@@ -2,9 +2,11 @@ package com.liferay.mobile.formsscreenletdemo.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.screens.rating.AssetRating;
 import com.liferay.mobile.screens.viewsets.defaultviews.rating.BaseRatingView;
@@ -52,5 +54,22 @@ public class ThumbsRatingDemoView extends BaseRatingView implements View.OnClick
 	protected void clicked(double score, double userScore) {
 		String actionName = score == userScore ? DELETE_RATING_ACTION : UPDATE_RATING_ACTION;
 		getScreenlet().performUserAction(actionName, score);
+
+		Toast toast = new Toast(getContext());
+		toast.setDuration(Toast.LENGTH_SHORT);
+
+		showRatingSuccess();
+	}
+
+	private void showRatingSuccess() {
+		Toast toast = new Toast(getContext());
+		toast.setDuration(Toast.LENGTH_SHORT);
+
+		LayoutInflater inflater = LayoutInflater.from(getContext());
+		View layout = inflater.inflate(R.layout.toast_layout_default, findViewById(R.id.toast_layout_default));
+		TextView ratingToastMessage = layout.findViewById(R.id.toast_message);
+		ratingToastMessage.setText(getResources().getString(R.string.thank_you_for_your_feedback));
+		toast.setView(layout);
+		toast.show();
 	}
 }
