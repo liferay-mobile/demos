@@ -57,7 +57,6 @@ public class FAQListActivity extends AppCompatActivity implements ScreenletEvent
 	}
 
 	private void loadFaqPopularListResource() {
-
 		String thingId =
 			DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server), Constants.CONTENT_SPACE_ID,
 				ResourceType.BLOGS);
