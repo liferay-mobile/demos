@@ -1,0 +1,182 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AppAuth (0.92.0)
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.4.0):
+    - CocoaLumberjack/Default
+  - Cordova (4.5.4)
+  - DTPickerPresenter (0.2.0)
+  - iOSPhotoEditor (0.5)
+  - KeychainAccess (3.1.1)
+  - Kingfisher (4.8.0)
+  - Liferay-iOS-SDK (7.1-beta2):
+    - AFNetworking (~> 3.0)
+    - AppAuth (= 0.92)
+  - LiferayScreens (4.0.0-beta-1):
+    - Cordova (~> 4.0)
+    - DTPickerPresenter (~> 0.2.0)
+    - KeychainAccess (~> 3.0)
+    - Kingfisher (~> 4.0)
+    - Liferay-iOS-SDK (~> 7.1-beta2)
+    - MBProgressHUD (~> 0.9.1)
+    - MDRadialProgress (~> 1.3.2)
+    - SMXMLDocument (~> 1.1)
+    - TNRadioButtonGroup (~> 0.4)
+    - YapDatabase/SQLCipher (= 2.9.2)
+  - MBProgressHUD (0.9.2)
+  - MDRadialProgress (1.3.2)
+  - PromiseKit (4.5.2):
+    - PromiseKit/Foundation (= 4.5.2)
+    - PromiseKit/QuartzCore (= 4.5.2)
+    - PromiseKit/UIKit (= 4.5.2)
+  - PromiseKit/CorePromise (4.5.2)
+  - PromiseKit/Foundation (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.5.2):
+    - PromiseKit/CorePromise
+  - Reachability (3.2)
+  - RxSwift (4.2.0)
+  - SlackTextViewController (1.9.6)
+  - SMXMLDocument (1.1)
+  - Socket.IO-Client-Swift (12.1.3):
+    - Starscream (~> 2.1.1)
+  - SQLCipher/common (3.4.2)
+  - SQLCipher/fts (3.4.2):
+    - SQLCipher/common
+  - Starscream (2.1.1)
+  - TNRadioButtonGroup (0.4)
+  - WeDeploy (1.2.0):
+    - PromiseKit (~> 4.1)
+    - RxSwift (~> 4.1)
+    - Socket.IO-Client-Swift (~> 12.1)
+  - YapDatabase/SQLCipher (2.9.2):
+    - YapDatabase/SQLCipher/Core (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions (= 2.9.2)
+  - YapDatabase/SQLCipher/Core (2.9.2):
+    - CocoaLumberjack (~> 2)
+    - SQLCipher/fts
+  - YapDatabase/SQLCipher/Extensions (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/ActionManager (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/CloudKit (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/ConnectionProxy (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/FilteredViews (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/FullTextSearch (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Hooks (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Relationships (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/RTreeIndex (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/SearchResults (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/SecondaryIndex (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Views (= 2.9.2)
+  - YapDatabase/SQLCipher/Extensions/ActionManager (2.9.2):
+    - Reachability (~> 3)
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/CloudKit (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/ConnectionProxy (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/FilteredViews (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/FullTextSearch (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Hooks (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Relationships (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/RTreeIndex (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/SearchResults (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/FullTextSearch
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/SecondaryIndex (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Views (2.9.2):
+    - YapDatabase/SQLCipher/Core
+
+DEPENDENCIES:
+  - iOSPhotoEditor
+  - LiferayScreens (~> 4.0.0-beta-1)
+  - SlackTextViewController
+  - WeDeploy
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - AppAuth
+    - CocoaLumberjack
+    - Cordova
+    - DTPickerPresenter
+    - iOSPhotoEditor
+    - KeychainAccess
+    - Kingfisher
+    - Liferay-iOS-SDK
+    - LiferayScreens
+    - MBProgressHUD
+    - MDRadialProgress
+    - PromiseKit
+    - Reachability
+    - RxSwift
+    - SlackTextViewController
+    - SMXMLDocument
+    - Socket.IO-Client-Swift
+    - SQLCipher
+    - Starscream
+    - TNRadioButtonGroup
+    - WeDeploy
+    - YapDatabase
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AppAuth: 3f4f1d6d85ad631d0bbf15ffcdc10c447face97a
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  Cordova: 90a337977b8667a80483f559268c82062b1183da
+  DTPickerPresenter: 1976573e3475534559b6ec1dad64b2ece16c966d
+  iOSPhotoEditor: 0ddc84bcef9fe73fe8cc45ac999b89e0aa207aea
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  Liferay-iOS-SDK: ab249a9bcd51c9db5ded1d7ebf9f688f6f24cb89
+  LiferayScreens: 5597fdaa6df70f46002f9922dcecc9fba3049ff1
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MDRadialProgress: 1068574b9b4b870f64b605b07f734385bde5104d
+  PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SlackTextViewController: b854e62c1c156336bc4fd409c6ca79b5773e8f9d
+  SMXMLDocument: e0d9fbf726a2a0921871b492966458acb3ad9689
+  Socket.IO-Client-Swift: 2d3838d0e7bc105626872081fb6a23141145e8f8
+  SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
+  Starscream: 142bd8ef24592d985daee9fa48c936070b85b15f
+  TNRadioButtonGroup: f5fb9b545d8913bbabe6a72ea1fa6fba4d833bb6
+  WeDeploy: f1359e5efa88c6de4d25e4ff0fa31b0f7bbf53c9
+  YapDatabase: b1e43555a34a5298e23a045be96817a5ef0da58f
+
+PODFILE CHECKSUM: f1560642f4baa86eed443798c98d284f730bdaa9
+
+COCOAPODS: 1.5.3

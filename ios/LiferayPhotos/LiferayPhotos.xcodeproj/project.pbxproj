@@ -1,0 +1,742 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F6E8B0EAD5D1BAEB6792669 /* Pods_LiferayPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8978D05CB9A630D5E56399 /* Pods_LiferayPhotos.framework */; };
+		A6100B0A20EBBBC7005E5BA8 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6100B0920EBBBC7005E5BA8 /* DetailViewController.xib */; };
+		A6100B0C20EBBBDE005E5BA8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6100B0B20EBBBDE005E5BA8 /* DetailViewController.swift */; };
+		A6360F2D20EBD2A300914ED9 /* CommentDisplayView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6360F2C20EBD2A200914ED9 /* CommentDisplayView_liferayphotos.xib */; };
+		A6360F3120EBD3FB00914ED9 /* CommentTableViewCell_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6360F3020EBD3FA00914ED9 /* CommentTableViewCell_liferayphotos.xib */; };
+		A6360F3320EBD6D500914ED9 /* CommentListView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6360F3220EBD6D400914ED9 /* CommentListView_liferayphotos.xib */; };
+		A6360F3520EBD6ED00914ED9 /* CommentListView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6360F3420EBD6ED00914ED9 /* CommentListView_liferayphotos.swift */; };
+		A6360F3720EBE1DB00914ED9 /* CommentAddView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6360F3620EBE1DA00914ED9 /* CommentAddView_liferayphotos.xib */; };
+		A6360F3920EBE41000914ED9 /* CommentAddView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6360F3820EBE41000914ED9 /* CommentAddView_liferayphotos.swift */; };
+		A642D45C2147D58200513E62 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A642D45A2147D58200513E62 /* logo.png */; };
+		A642D45D2147D58200513E62 /* logo-xl.png in Resources */ = {isa = PBXBuildFile; fileRef = A642D45B2147D58200513E62 /* logo-xl.png */; };
+		A647DDB920E541DB00B36511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A647DDB820E541DB00B36511 /* AppDelegate.swift */; };
+		A647DDC020E541DD00B36511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A647DDBF20E541DD00B36511 /* Assets.xcassets */; };
+		A647DDC320E541DD00B36511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A647DDC120E541DD00B36511 /* LaunchScreen.storyboard */; };
+		A68AF5EC20F77F780064DF75 /* MainViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AF5EB20F77F780064DF75 /* MainViewControllerExtensions.swift */; };
+		A68D6F7B20E54563005D2C79 /* liferay-server-context.plist in Resources */ = {isa = PBXBuildFile; fileRef = A68D6F7A20E54563005D2C79 /* liferay-server-context.plist */; };
+		A68D6F8220E547F4005D2C79 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6F8120E547F4005D2C79 /* UIViewControllerExtensions.swift */; };
+		A68D6F8420E54829005D2C79 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6F8320E54829005D2C79 /* LoginViewController.swift */; };
+		A68D6F8620E54B3F005D2C79 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6F8520E54B3F005D2C79 /* LoadingViewController.swift */; };
+		A68D6F8920E551BE005D2C79 /* ImageGalleryView_liferayphotos_feed.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68D6F8820E551BE005D2C79 /* ImageGalleryView_liferayphotos_feed.xib */; };
+		A68D6F8B20E551ED005D2C79 /* ImageGalleryView_liferayphotos_feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6F8A20E551ED005D2C79 /* ImageGalleryView_liferayphotos_feed.swift */; };
+		A6A5CD8920ECFE8D00119966 /* CommentDisplayView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5CD8820ECFE8D00119966 /* CommentDisplayView_liferayphotos.swift */; };
+		A6A5CD8B20EF575400119966 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5CD8A20EF575400119966 /* ChatViewController.swift */; };
+		A6A5CD8C20EF582100119966 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D680443520ECDA9E00B64BE0 /* MessageCell.swift */; };
+		A6A5CD8D20EF587600119966 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D680443B20ECDBA900B64BE0 /* bg.jpg */; };
+		A6A5CD8E20EF589E00119966 /* profile_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = D66C6BE220EBAE5000544BCD /* profile_enabled.png */; };
+		A6A5CD9120EF68BB00119966 /* plus-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A6A5CD9020EF68BB00119966 /* plus-button.png */; };
+		A6A5CD9320EF8A0300119966 /* ImageUploadDetailView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A5CD9220EF8A0300119966 /* ImageUploadDetailView_liferayphotos.xib */; };
+		A6A5CD9520EF8A2700119966 /* ImageUploadDetailView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5CD9420EF8A2700119966 /* ImageUploadDetailView_liferayphotos.swift */; };
+		A6A5CD9720F3496D00119966 /* LoginView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A5CD9620F3496C00119966 /* LoginView_liferayphotos.xib */; };
+		A6A5CD9920F3498D00119966 /* LoginView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5CD9820F3498D00119966 /* LoginView_liferayphotos.swift */; };
+		A6A5CD9D20F49E9600119966 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5CD9C20F49E9600119966 /* SignUpViewController.swift */; };
+		A6A5CD9F20F49EB900119966 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A5CD9E20F49EB900119966 /* SignUpViewController.xib */; };
+		A6A5CDA120F4A9EC00119966 /* SignUpView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A5CDA020F4A9EA00119966 /* SignUpView_liferayphotos.xib */; };
+		A6A5CDA320F4AA0B00119966 /* SignUpView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A5CDA220F4AA0B00119966 /* SignUpView_liferayphotos.swift */; };
+		D60306DD20E9FF7E005262B0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60306DB20E9FF7E005262B0 /* LoginViewController.xib */; };
+		D60306DF20EA0161005262B0 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60306DE20EA0161005262B0 /* LoadingViewController.xib */; };
+		D60306E120EA01E6005262B0 /* XibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60306E020EA01E6005262B0 /* XibViewController.swift */; };
+		D60306E320EA0346005262B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60306E220EA0346005262B0 /* MainViewController.swift */; };
+		D60306E620EA0473005262B0 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60306E420EA0473005262B0 /* FeedViewController.swift */; };
+		D60306E720EA0473005262B0 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60306E520EA0473005262B0 /* FeedViewController.xib */; };
+		D60306EA20EA075E005262B0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60306E820EA075E005262B0 /* UserProfileViewController.swift */; };
+		D60306EB20EA075E005262B0 /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60306E920EA075E005262B0 /* UserProfileViewController.xib */; };
+		D60306EF20EA295B005262B0 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60306ED20EA295B005262B0 /* FeedCell.swift */; };
+		D66C3BF620EA50CC00BF83A0 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66C3BF520EA50CC00BF83A0 /* FeedCell.xib */; };
+		D66C3BFC20EA6AEE00BF83A0 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = D66C3BFB20EA6AEE00BF83A0 /* comments.png */; };
+		D66C3BFE20EA779700BF83A0 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C3BFD20EA779700BF83A0 /* UserView.swift */; };
+		D66C3C0020EA77A100BF83A0 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66C3BFF20EA77A100BF83A0 /* UserView.xib */; };
+		D66C6BC620EB71DA00544BCD /* UserPortraitView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66C6BC420EB71DA00544BCD /* UserPortraitView_liferayphotos.xib */; };
+		D66C6BC720EB71DA00544BCD /* UserPortraitView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C6BC520EB71DA00544BCD /* UserPortraitView_liferayphotos.swift */; };
+		D66C6BCC20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66C6BCA20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.xib */; };
+		D66C6BCD20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C6BCB20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.swift */; };
+		D66C6BE020EBAD7E00544BCD /* feed_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = D66C6BDE20EBAD7E00544BCD /* feed_disabled.png */; };
+		D66C6BE120EBAD7E00544BCD /* feed_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = D66C6BDF20EBAD7E00544BCD /* feed_enabled.png */; };
+		D66C6BE520EBAE5000544BCD /* profile_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = D66C6BE320EBAE5000544BCD /* profile_disabled.png */; };
+		D680440920ECCF4E00B64BE0 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = D680440820ECCF4E00B64BE0 /* chat.png */; };
+		D680441120ECDA6000B64BE0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D680440F20ECDA5F00B64BE0 /* Message.swift */; };
+		D680441220ECDA6000B64BE0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D680441020ECDA5F00B64BE0 /* Colors.swift */; };
+		D680443920ECDA9F00B64BE0 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D680443620ECDA9F00B64BE0 /* MessageCell.xib */; };
+		D680443A20ECDA9F00B64BE0 /* OtherMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D680443720ECDA9F00B64BE0 /* OtherMessageCell.xib */; };
+		D680443E20ECDBAF00B64BE0 /* arrows.png in Resources */ = {isa = PBXBuildFile; fileRef = D680443D20ECDBAF00B64BE0 /* arrows.png */; };
+		D693891220EA3891003EC7ED /* RatingView_liferayphotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693891120EA3891003EC7ED /* RatingView_liferayphotos.swift */; };
+		D693891420EA389E003EC7ED /* RatingView_liferayphotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = D693891320EA389E003EC7ED /* RatingView_liferayphotos.xib */; };
+		D693891620EA3949003EC7ED /* like_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = D693891520EA3949003EC7ED /* like_enabled.png */; };
+		D693891820EA3A02003EC7ED /* like_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = D693891720EA3A02003EC7ED /* like_disabled.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0073633C0F27A1D283F95A12 /* Pods-LiferayPhotos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiferayPhotos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiferayPhotos/Pods-LiferayPhotos.debug.xcconfig"; sourceTree = "<group>"; };
+		2117F26F5914DB4F9740CE7C /* Pods-Shiseidme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shiseidme.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shiseidme/Pods-Shiseidme.release.xcconfig"; sourceTree = "<group>"; };
+		4702D4A04DABC84BA31967D6 /* Pods-Shiseidme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shiseidme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shiseidme/Pods-Shiseidme.debug.xcconfig"; sourceTree = "<group>"; };
+		6A8978D05CB9A630D5E56399 /* Pods_LiferayPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiferayPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1398396F21CC8A2638E3E77 /* Pods_Shiseidme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shiseidme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6100B0920EBBBC7005E5BA8 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		A6100B0B20EBBBDE005E5BA8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A6360F2C20EBD2A200914ED9 /* CommentDisplayView_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentDisplayView_liferayphotos.xib; sourceTree = "<group>"; };
+		A6360F3020EBD3FA00914ED9 /* CommentTableViewCell_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell_liferayphotos.xib; sourceTree = "<group>"; };
+		A6360F3220EBD6D400914ED9 /* CommentListView_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentListView_liferayphotos.xib; sourceTree = "<group>"; };
+		A6360F3420EBD6ED00914ED9 /* CommentListView_liferayphotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView_liferayphotos.swift; sourceTree = "<group>"; };
+		A6360F3620EBE1DA00914ED9 /* CommentAddView_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentAddView_liferayphotos.xib; sourceTree = "<group>"; };
+		A6360F3820EBE41000914ED9 /* CommentAddView_liferayphotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAddView_liferayphotos.swift; sourceTree = "<group>"; };
+		A642D45A2147D58200513E62 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		A642D45B2147D58200513E62 /* logo-xl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-xl.png"; sourceTree = "<group>"; };
+		A647DDB520E541DB00B36511 /* LiferayPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiferayPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A647DDB820E541DB00B36511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A647DDBF20E541DD00B36511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A647DDC220E541DD00B36511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A647DDC420E541DD00B36511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A68AF5EB20F77F780064DF75 /* MainViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtensions.swift; sourceTree = "<group>"; };
+		A68D6F7A20E54563005D2C79 /* liferay-server-context.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "liferay-server-context.plist"; sourceTree = "<group>"; };
+		A68D6F8120E547F4005D2C79 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		A68D6F8320E54829005D2C79 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A68D6F8520E54B3F005D2C79 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		A68D6F8820E551BE005D2C79 /* ImageGalleryView_liferayphotos_feed.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGalleryView_liferayphotos_feed.xib; sourceTree = "<group>"; };
+		A68D6F8A20E551ED005D2C79 /* ImageGalleryView_liferayphotos_feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryView_liferayphotos_feed.swift; sourceTree = "<group>"; };
+		A6A5CD8820ECFE8D00119966 /* CommentDisplayView_liferayphotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDisplayView_liferayphotos.swift; sourceTree = "<group>"; };
+		A6A5CD8A20EF575400119966 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A6A5CD9020EF68BB00119966 /* plus-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-button.png"; sourceTree = "<group>"; };
+		A6A5CD9220EF8A0300119966 /* ImageUploadDetailView_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageUploadDetailView_liferayphotos.xib; sourceTree = "<group>"; };
+		A6A5CD9420EF8A2700119966 /* ImageUploadDetailView_liferayphotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadDetailView_liferayphotos.swift; sourceTree = "<group>"; };
+		A6A5CD9620F3496C00119966 /* LoginView_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView_liferayphotos.xib; sourceTree = "<group>"; };
+		A6A5CD9820F3498D00119966 /* LoginView_liferayphotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView_liferayphotos.swift; sourceTree = "<group>"; };
+		A6A5CD9C20F49E9600119966 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A6A5CD9E20F49EB900119966 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		A6A5CDA020F4A9EA00119966 /* SignUpView_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView_liferayphotos.xib; sourceTree = "<group>"; };
+		A6A5CDA220F4AA0B00119966 /* SignUpView_liferayphotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView_liferayphotos.swift; sourceTree = "<group>"; };
+		CBFD391A6BDAC6D98B9AC8B1 /* Pods-LiferayPhotos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiferayPhotos.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiferayPhotos/Pods-LiferayPhotos.release.xcconfig"; sourceTree = "<group>"; };
+		D60306DB20E9FF7E005262B0 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		D60306DE20EA0161005262B0 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		D60306E020EA01E6005262B0 /* XibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewController.swift; sourceTree = "<group>"; };
+		D60306E220EA0346005262B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D60306E420EA0473005262B0 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		D60306E520EA0473005262B0 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		D60306E820EA075E005262B0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		D60306E920EA075E005262B0 /* UserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
+		D60306ED20EA295B005262B0 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		D66C3BF520EA50CC00BF83A0 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		D66C3BFB20EA6AEE00BF83A0 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
+		D66C3BFD20EA779700BF83A0 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		D66C3BFF20EA77A100BF83A0 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
+		D66C6BC420EB71DA00544BCD /* UserPortraitView_liferayphotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserPortraitView_liferayphotos.xib; sourceTree = "<group>"; };
+		D66C6BC520EB71DA00544BCD /* UserPortraitView_liferayphotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPortraitView_liferayphotos.swift; sourceTree = "<group>"; };
+		D66C6BCA20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageGalleryView_liferayphotos_profile.xib; sourceTree = "<group>"; };
+		D66C6BCB20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGalleryView_liferayphotos_profile.swift; sourceTree = "<group>"; };
+		D66C6BDE20EBAD7E00544BCD /* feed_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed_disabled.png; sourceTree = "<group>"; };
+		D66C6BDF20EBAD7E00544BCD /* feed_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed_enabled.png; sourceTree = "<group>"; };
+		D66C6BE220EBAE5000544BCD /* profile_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_enabled.png; sourceTree = "<group>"; };
+		D66C6BE320EBAE5000544BCD /* profile_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_disabled.png; sourceTree = "<group>"; };
+		D680440820ECCF4E00B64BE0 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		D680440F20ECDA5F00B64BE0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D680441020ECDA5F00B64BE0 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D680443520ECDA9E00B64BE0 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		D680443620ECDA9F00B64BE0 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		D680443720ECDA9F00B64BE0 /* OtherMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherMessageCell.xib; sourceTree = "<group>"; };
+		D680443B20ECDBA900B64BE0 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		D680443D20ECDBAF00B64BE0 /* arrows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows.png; sourceTree = "<group>"; };
+		D693891120EA3891003EC7ED /* RatingView_liferayphotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView_liferayphotos.swift; sourceTree = "<group>"; };
+		D693891320EA389E003EC7ED /* RatingView_liferayphotos.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingView_liferayphotos.xib; sourceTree = "<group>"; };
+		D693891520EA3949003EC7ED /* like_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_enabled.png; sourceTree = "<group>"; };
+		D693891720EA3A02003EC7ED /* like_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_disabled.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A647DDB220E541DB00B36511 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6E8B0EAD5D1BAEB6792669 /* Pods_LiferayPhotos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		801DB5D70DF575083AA0F7D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4702D4A04DABC84BA31967D6 /* Pods-Shiseidme.debug.xcconfig */,
+				2117F26F5914DB4F9740CE7C /* Pods-Shiseidme.release.xcconfig */,
+				0073633C0F27A1D283F95A12 /* Pods-LiferayPhotos.debug.xcconfig */,
+				CBFD391A6BDAC6D98B9AC8B1 /* Pods-LiferayPhotos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		95ED39666A8682BC45385E4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1398396F21CC8A2638E3E77 /* Pods_Shiseidme.framework */,
+				6A8978D05CB9A630D5E56399 /* Pods_LiferayPhotos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A647DDAC20E541DB00B36511 = {
+			isa = PBXGroup;
+			children = (
+				A647DDB720E541DB00B36511 /* LiferayPhotos */,
+				A647DDB620E541DB00B36511 /* Products */,
+				801DB5D70DF575083AA0F7D9 /* Pods */,
+				95ED39666A8682BC45385E4A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A647DDB620E541DB00B36511 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A647DDB520E541DB00B36511 /* LiferayPhotos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A647DDB720E541DB00B36511 /* LiferayPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				D680440E20ECDA4F00B64BE0 /* Models */,
+				D693890E20EA3490003EC7ED /* Resources */,
+				A68D6F8720E55122005D2C79 /* Themes */,
+				A68D6F7E20E547CB005D2C79 /* Extensions */,
+				A68D6F7720E544E2005D2C79 /* ScreenletsViewControllers */,
+				A647DDB820E541DB00B36511 /* AppDelegate.swift */,
+				A68D6F8520E54B3F005D2C79 /* LoadingViewController.swift */,
+				D60306DE20EA0161005262B0 /* LoadingViewController.xib */,
+				A647DDBF20E541DD00B36511 /* Assets.xcassets */,
+				A647DDC120E541DD00B36511 /* LaunchScreen.storyboard */,
+				A647DDC420E541DD00B36511 /* Info.plist */,
+				A68D6F7A20E54563005D2C79 /* liferay-server-context.plist */,
+				D60306E020EA01E6005262B0 /* XibViewController.swift */,
+			);
+			path = LiferayPhotos;
+			sourceTree = "<group>";
+		};
+		A68D6F7720E544E2005D2C79 /* ScreenletsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D680443420ECDA9200B64BE0 /* Cells */,
+				A6A5CD8A20EF575400119966 /* ChatViewController.swift */,
+				D60306E220EA0346005262B0 /* MainViewController.swift */,
+				A68D6F8320E54829005D2C79 /* LoginViewController.swift */,
+				D60306DB20E9FF7E005262B0 /* LoginViewController.xib */,
+				D60306E420EA0473005262B0 /* FeedViewController.swift */,
+				D60306E520EA0473005262B0 /* FeedViewController.xib */,
+				D60306E820EA075E005262B0 /* UserProfileViewController.swift */,
+				D60306E920EA075E005262B0 /* UserProfileViewController.xib */,
+				A6100B0920EBBBC7005E5BA8 /* DetailViewController.xib */,
+				A6100B0B20EBBBDE005E5BA8 /* DetailViewController.swift */,
+				A6A5CD9C20F49E9600119966 /* SignUpViewController.swift */,
+				A6A5CD9E20F49EB900119966 /* SignUpViewController.xib */,
+			);
+			path = ScreenletsViewControllers;
+			sourceTree = "<group>";
+		};
+		A68D6F7E20E547CB005D2C79 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A68D6F8120E547F4005D2C79 /* UIViewControllerExtensions.swift */,
+				A68AF5EB20F77F780064DF75 /* MainViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A68D6F8720E55122005D2C79 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				A6A5CD9620F3496C00119966 /* LoginView_liferayphotos.xib */,
+				A6A5CD9820F3498D00119966 /* LoginView_liferayphotos.swift */,
+				A6A5CDA020F4A9EA00119966 /* SignUpView_liferayphotos.xib */,
+				A6A5CDA220F4AA0B00119966 /* SignUpView_liferayphotos.swift */,
+				D66C6BCB20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.swift */,
+				D66C6BCA20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.xib */,
+				D66C6BC520EB71DA00544BCD /* UserPortraitView_liferayphotos.swift */,
+				D66C6BC420EB71DA00544BCD /* UserPortraitView_liferayphotos.xib */,
+				A6360F2C20EBD2A200914ED9 /* CommentDisplayView_liferayphotos.xib */,
+				A6A5CD8820ECFE8D00119966 /* CommentDisplayView_liferayphotos.swift */,
+				A6360F3220EBD6D400914ED9 /* CommentListView_liferayphotos.xib */,
+				A6360F3420EBD6ED00914ED9 /* CommentListView_liferayphotos.swift */,
+				A6360F3620EBE1DA00914ED9 /* CommentAddView_liferayphotos.xib */,
+				A6360F3820EBE41000914ED9 /* CommentAddView_liferayphotos.swift */,
+				A6A5CD9220EF8A0300119966 /* ImageUploadDetailView_liferayphotos.xib */,
+				A6A5CD9420EF8A2700119966 /* ImageUploadDetailView_liferayphotos.swift */,
+				D60306EC20EA2947005262B0 /* Cells */,
+				A68D6F8820E551BE005D2C79 /* ImageGalleryView_liferayphotos_feed.xib */,
+				A68D6F8A20E551ED005D2C79 /* ImageGalleryView_liferayphotos_feed.swift */,
+				D693891120EA3891003EC7ED /* RatingView_liferayphotos.swift */,
+				D693891320EA389E003EC7ED /* RatingView_liferayphotos.xib */,
+				D66C3BFD20EA779700BF83A0 /* UserView.swift */,
+				D66C3BFF20EA77A100BF83A0 /* UserView.xib */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		D60306EC20EA2947005262B0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D66C3BF520EA50CC00BF83A0 /* FeedCell.xib */,
+				D60306ED20EA295B005262B0 /* FeedCell.swift */,
+				A6360F3020EBD3FA00914ED9 /* CommentTableViewCell_liferayphotos.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D680440E20ECDA4F00B64BE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D680441020ECDA5F00B64BE0 /* Colors.swift */,
+				D680440F20ECDA5F00B64BE0 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D680443420ECDA9200B64BE0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D680443520ECDA9E00B64BE0 /* MessageCell.swift */,
+				D680443620ECDA9F00B64BE0 /* MessageCell.xib */,
+				D680443720ECDA9F00B64BE0 /* OtherMessageCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D693890E20EA3490003EC7ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D680443D20ECDBAF00B64BE0 /* arrows.png */,
+				D680443B20ECDBA900B64BE0 /* bg.jpg */,
+				D680440820ECCF4E00B64BE0 /* chat.png */,
+				D66C6BDE20EBAD7E00544BCD /* feed_disabled.png */,
+				D66C6BDF20EBAD7E00544BCD /* feed_enabled.png */,
+				D66C6BE320EBAE5000544BCD /* profile_disabled.png */,
+				D66C6BE220EBAE5000544BCD /* profile_enabled.png */,
+				D693891520EA3949003EC7ED /* like_enabled.png */,
+				D693891720EA3A02003EC7ED /* like_disabled.png */,
+				D66C3BFB20EA6AEE00BF83A0 /* comments.png */,
+				A6A5CD9020EF68BB00119966 /* plus-button.png */,
+				A642D45B2147D58200513E62 /* logo-xl.png */,
+				A642D45A2147D58200513E62 /* logo.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A647DDB420E541DB00B36511 /* LiferayPhotos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A647DDDD20E541DD00B36511 /* Build configuration list for PBXNativeTarget "LiferayPhotos" */;
+			buildPhases = (
+				9C2DDAB8EB57E7465ADD1182 /* [CP] Check Pods Manifest.lock */,
+				A647DDB120E541DB00B36511 /* Sources */,
+				A647DDB220E541DB00B36511 /* Frameworks */,
+				A647DDB320E541DB00B36511 /* Resources */,
+				52BE782A906B7EDF700826C7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiferayPhotos;
+			productName = Shiseidme;
+			productReference = A647DDB520E541DB00B36511 /* LiferayPhotos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A647DDAD20E541DB00B36511 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Luis Miguel Barco";
+				TargetAttributes = {
+					A647DDB420E541DB00B36511 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A647DDB020E541DB00B36511 /* Build configuration list for PBXProject "LiferayPhotos" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A647DDAC20E541DB00B36511;
+			productRefGroup = A647DDB620E541DB00B36511 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A647DDB420E541DB00B36511 /* LiferayPhotos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A647DDB320E541DB00B36511 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D693891420EA389E003EC7ED /* RatingView_liferayphotos.xib in Resources */,
+				D693891820EA3A02003EC7ED /* like_disabled.png in Resources */,
+				A6360F2D20EBD2A300914ED9 /* CommentDisplayView_liferayphotos.xib in Resources */,
+				A6100B0A20EBBBC7005E5BA8 /* DetailViewController.xib in Resources */,
+				A6A5CDA120F4A9EC00119966 /* SignUpView_liferayphotos.xib in Resources */,
+				A6A5CD9720F3496D00119966 /* LoginView_liferayphotos.xib in Resources */,
+				A6360F3720EBE1DB00914ED9 /* CommentAddView_liferayphotos.xib in Resources */,
+				D60306DF20EA0161005262B0 /* LoadingViewController.xib in Resources */,
+				D680440920ECCF4E00B64BE0 /* chat.png in Resources */,
+				D66C6BE120EBAD7E00544BCD /* feed_enabled.png in Resources */,
+				D66C6BC620EB71DA00544BCD /* UserPortraitView_liferayphotos.xib in Resources */,
+				A6360F3320EBD6D500914ED9 /* CommentListView_liferayphotos.xib in Resources */,
+				A68D6F7B20E54563005D2C79 /* liferay-server-context.plist in Resources */,
+				A6A5CD8E20EF589E00119966 /* profile_enabled.png in Resources */,
+				D66C3BF620EA50CC00BF83A0 /* FeedCell.xib in Resources */,
+				A642D45D2147D58200513E62 /* logo-xl.png in Resources */,
+				D60306E720EA0473005262B0 /* FeedViewController.xib in Resources */,
+				A647DDC320E541DD00B36511 /* LaunchScreen.storyboard in Resources */,
+				A6A5CD9320EF8A0300119966 /* ImageUploadDetailView_liferayphotos.xib in Resources */,
+				A6A5CD9120EF68BB00119966 /* plus-button.png in Resources */,
+				D680443E20ECDBAF00B64BE0 /* arrows.png in Resources */,
+				A642D45C2147D58200513E62 /* logo.png in Resources */,
+				D60306DD20E9FF7E005262B0 /* LoginViewController.xib in Resources */,
+				A6A5CD9F20F49EB900119966 /* SignUpViewController.xib in Resources */,
+				D66C6BE520EBAE5000544BCD /* profile_disabled.png in Resources */,
+				D680443920ECDA9F00B64BE0 /* MessageCell.xib in Resources */,
+				D693891620EA3949003EC7ED /* like_enabled.png in Resources */,
+				A6A5CD8D20EF587600119966 /* bg.jpg in Resources */,
+				D66C3BFC20EA6AEE00BF83A0 /* comments.png in Resources */,
+				D680443A20ECDA9F00B64BE0 /* OtherMessageCell.xib in Resources */,
+				D60306EB20EA075E005262B0 /* UserProfileViewController.xib in Resources */,
+				A68D6F8920E551BE005D2C79 /* ImageGalleryView_liferayphotos_feed.xib in Resources */,
+				A6360F3120EBD3FB00914ED9 /* CommentTableViewCell_liferayphotos.xib in Resources */,
+				A647DDC020E541DD00B36511 /* Assets.xcassets in Resources */,
+				D66C3C0020EA77A100BF83A0 /* UserView.xib in Resources */,
+				D66C6BCC20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.xib in Resources */,
+				D66C6BE020EBAD7E00544BCD /* feed_disabled.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52BE782A906B7EDF700826C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LiferayPhotos/Pods-LiferayPhotos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/Cordova/Cordova.framework",
+				"${BUILT_PRODUCTS_DIR}/DTPickerPresenter/DTPickerPresenter.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Liferay-iOS-SDK/LRMobileSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/LiferayScreens/LiferayScreens.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MDRadialProgress/MDRadialProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SMXMLDocument/SMXMLDocument.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
+				"${BUILT_PRODUCTS_DIR}/SlackTextViewController/SlackTextViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/TNRadioButtonGroup/TNRadioButtonGroup.framework",
+				"${BUILT_PRODUCTS_DIR}/WeDeploy/WeDeploy.framework",
+				"${BUILT_PRODUCTS_DIR}/YapDatabase/YapDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cordova.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTPickerPresenter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRMobileSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LiferayScreens.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDRadialProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SMXMLDocument.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlackTextViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TNRadioButtonGroup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WeDeploy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YapDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiferayPhotos/Pods-LiferayPhotos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C2DDAB8EB57E7465ADD1182 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiferayPhotos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A647DDB120E541DB00B36511 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66C6BC720EB71DA00544BCD /* UserPortraitView_liferayphotos.swift in Sources */,
+				D66C6BCD20EB8E4800544BCD /* ImageGalleryView_liferayphotos_profile.swift in Sources */,
+				A6A5CD8B20EF575400119966 /* ChatViewController.swift in Sources */,
+				A68D6F8B20E551ED005D2C79 /* ImageGalleryView_liferayphotos_feed.swift in Sources */,
+				A6A5CD9D20F49E9600119966 /* SignUpViewController.swift in Sources */,
+				D680441220ECDA6000B64BE0 /* Colors.swift in Sources */,
+				D60306EF20EA295B005262B0 /* FeedCell.swift in Sources */,
+				D60306E620EA0473005262B0 /* FeedViewController.swift in Sources */,
+				A68D6F8220E547F4005D2C79 /* UIViewControllerExtensions.swift in Sources */,
+				D60306E120EA01E6005262B0 /* XibViewController.swift in Sources */,
+				A647DDB920E541DB00B36511 /* AppDelegate.swift in Sources */,
+				A68D6F8620E54B3F005D2C79 /* LoadingViewController.swift in Sources */,
+				A6A5CD8C20EF582100119966 /* MessageCell.swift in Sources */,
+				A6A5CD8920ECFE8D00119966 /* CommentDisplayView_liferayphotos.swift in Sources */,
+				A6A5CD9520EF8A2700119966 /* ImageUploadDetailView_liferayphotos.swift in Sources */,
+				D66C3BFE20EA779700BF83A0 /* UserView.swift in Sources */,
+				A6360F3520EBD6ED00914ED9 /* CommentListView_liferayphotos.swift in Sources */,
+				A68AF5EC20F77F780064DF75 /* MainViewControllerExtensions.swift in Sources */,
+				D60306E320EA0346005262B0 /* MainViewController.swift in Sources */,
+				D693891220EA3891003EC7ED /* RatingView_liferayphotos.swift in Sources */,
+				A6A5CD9920F3498D00119966 /* LoginView_liferayphotos.swift in Sources */,
+				A6A5CDA320F4AA0B00119966 /* SignUpView_liferayphotos.swift in Sources */,
+				A6100B0C20EBBBDE005E5BA8 /* DetailViewController.swift in Sources */,
+				D60306EA20EA075E005262B0 /* UserProfileViewController.swift in Sources */,
+				D680441120ECDA6000B64BE0 /* Message.swift in Sources */,
+				A68D6F8420E54829005D2C79 /* LoginViewController.swift in Sources */,
+				A6360F3920EBE41000914ED9 /* CommentAddView_liferayphotos.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A647DDC120E541DD00B36511 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A647DDC220E541DD00B36511 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A647DDDB20E541DD00B36511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A647DDDC20E541DD00B36511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A647DDDE20E541DD00B36511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0073633C0F27A1D283F95A12 /* Pods-LiferayPhotos.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CY8Z78944;
+				INFOPLIST_FILE = LiferayPhotos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liferay.LiferayPhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A647DDDF20E541DD00B36511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBFD391A6BDAC6D98B9AC8B1 /* Pods-LiferayPhotos.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CY8Z78944;
+				INFOPLIST_FILE = LiferayPhotos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.liferay.LiferayPhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A647DDB020E541DB00B36511 /* Build configuration list for PBXProject "LiferayPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A647DDDB20E541DD00B36511 /* Debug */,
+				A647DDDC20E541DD00B36511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A647DDDD20E541DD00B36511 /* Build configuration list for PBXNativeTarget "LiferayPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A647DDDE20E541DD00B36511 /* Debug */,
+				A647DDDF20E541DD00B36511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A647DDAD20E541DB00B36511 /* Project object */;
+}
