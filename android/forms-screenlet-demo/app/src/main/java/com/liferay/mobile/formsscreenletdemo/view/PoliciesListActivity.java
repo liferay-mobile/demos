@@ -49,6 +49,8 @@ public class PoliciesListActivity extends AppCompatActivity implements BaseListL
     public void onListItemSelected(AssetEntry element, View view) {
         Intent intent = new Intent(this, PolicyDetailActivity.class);
         intent.putExtra(Constants.ENTRY_ID_KEY, Long.valueOf(element.getValues().get(Constants.ENTRY_ID_KEY).toString()));
+        intent.putExtra(Constants.ASSET_ENTRY_URL, element.getValues().get(Constants.ASSET_ENTRY_URL).toString());
+        intent.putExtra(Constants.ASSET_ENTRY_TITLE, element.getValues().get(Constants.ASSET_ENTRY_TITLE).toString());
         startActivity(intent);
     }
 

@@ -12,5 +12,7 @@ public interface Constants {
 	String PERSON_ENDPOINT = "/o/api/p/user-account/%d";
 	String ENTRY_ID_KEY = "entryId";
 	String THING_ID_KEY = "thingId";
+	String ASSET_ENTRY_URL = "url";
+	String ASSET_ENTRY_TITLE = "title";
 }
 

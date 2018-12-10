@@ -14,7 +14,9 @@
         android:layout_height="wrap_content"
         android:elevation="@dimen/toolbar_elevation"
         android:background="@color/white"
-        app:titleTextColor="@color/toolbar_text_color"/>
+        android:theme="@style/AppTheme.PopupOverlay"
+        app:titleTextColor="@color/toolbar_text_color"
+        />
 
     <FrameLayout
         android:layout_width="match_parent"

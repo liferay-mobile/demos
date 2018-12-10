@@ -10,6 +10,8 @@
 	<string name="drawer_open">Open navigation drawer</string>
 	<string name="default_email">test@liferay.com</string>
 	<string name="default_password">test</string>
+	<string name="download_file">Download file</string>
+	<string name="completed">completed.</string>
 	<string name="enter_your_email_address_to_reset_your_password">Enter your email address to reset your password.</string>
 	<string name="faq">FAQ</string>
 	<string name="forgot_password">Forgot Password?</string>
@@ -44,4 +46,5 @@
 	<string name="was_this_article_useful">Was this article useful? </string>
 	<string name="we_have_coverage_options_to_protect_your_car_against_just_about_anything">We have coverage options to protect your car against just about anything.</string>
 	<string name="workflow">Workflow</string>
+	<string name="download_policy">Download Policy</string>
 </resources>
