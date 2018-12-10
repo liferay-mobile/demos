@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context="com.liferay.mobile.formsscreenletdemo.view.PolicyDetailActivity">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	android:orientation="vertical"
+	tools:context="com.liferay.mobile.formsscreenletdemo.view.PolicyDetailActivity"
+	>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_policy_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="@dimen/toolbar_elevation"
-        android:background="@color/white"
-        android:theme="@style/AppTheme.PopupOverlay"
-        app:titleTextColor="@color/toolbar_text_color"
-        />
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/my_policy_toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:elevation="@dimen/toolbar_elevation"
+		android:theme="@style/AppTheme.PopupOverlay"
+		app:titleTextColor="@color/toolbar_text_color"
+		/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
 
-        <ScrollView
-            android:id="@+id/scroll_view_policy"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+		<ScrollView
+			android:id="@+id/scroll_view_policy"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			>
 
-            <com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet
-                android:id="@+id/my_policy"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:pdflayoutId="@layout/layout_pdf_display_demo_view"/>
+			<com.liferay.mobile.screens.asset.display.AssetDisplayScreenlet
+				android:id="@+id/my_policy"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:pdflayoutId="@layout/layout_pdf_display_demo_view"
+				/>
 
-        </ScrollView>
+		</ScrollView>
 
-    </FrameLayout>
+	</FrameLayout>
 
 </LinearLayout>
