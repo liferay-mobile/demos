@@ -29,8 +29,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/policy_item_line_height"
-            android:background="@color/policy_item_line_color"/>
+            android:layout_height="@dimen/view_line_height"
+            android:background="@color/view_line_color"/>
 
     </LinearLayout>
 

@@ -110,8 +110,7 @@ public class PolicyDetailActivity extends AppCompatActivity
 
 	@Override
 	public void error(Exception e, String userAction) {
-		DemoUtil.showNegativeSnackBar(this,
-			assetDisplayScreenlet);
+		DemoUtil.showErrorSnackBar(this, assetDisplayScreenlet);
 	}
 
 	@Override

@@ -47,7 +47,7 @@ public class DemoUtil {
 		window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 	}
 
-	public static void showNegativeSnackBar(Context context, View layout) {
+	public static void showErrorSnackBar(Context context, View layout) {
 		int icon = R.drawable.default_error_icon;
 		int backgroundColor =
 			ContextCompat.getColor(context, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
