@@ -8,7 +8,7 @@
 	tools:context="com.liferay.mobile.formsscreenletdemo.view.sessions.TakeCareListActivity"
 	>
 
-	<android.support.v7.widget.Toolbar
+	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/toolbar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
 			android:textSize="@dimen/toolbar_title_text_size"
 			/>
 
-	</android.support.v7.widget.Toolbar>
+	</androidx.appcompat.widget.Toolbar>
 
 	<com.liferay.mobile.screens.asset.list.AssetListScreenlet
 		android:id="@+id/asset_list_screenlet"

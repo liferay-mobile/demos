@@ -1,8 +1,8 @@
 package com.liferay.mobile.formsscreenletdemo.view;
 
 import android.content.Context;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 
 import com.liferay.mobile.formsscreenletdemo.R;

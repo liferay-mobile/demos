@@ -10,7 +10,7 @@
 	tools:context="com.liferay.mobile.formsscreenletdemo.view.FormsActivity"
 	>
 
-	<android.support.v7.widget.Toolbar
+	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/forms_toolbar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
 
 		<include layout="@layout/form_detail_error_view"/>
 
-		<android.support.v4.widget.SwipeRefreshLayout
+		<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 			android:id="@+id/pull_to_refresh"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
@@ -45,7 +45,7 @@
 				app:formInstanceId="@string/insurance_form_id"
 				/>
 
-		</android.support.v4.widget.SwipeRefreshLayout>
+		</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 	</FrameLayout>
 </LinearLayout>
