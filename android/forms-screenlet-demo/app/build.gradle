@@ -38,4 +38,6 @@ dependencies {
 	implementation 'com.liferay.mobile:liferay-push:1.2.1'
 	implementation 'com.liferay.mobile:liferay-screens:5.0.3'
 	implementation 'com.liferay.mobile:liferay-lexicon-viewset:5.0.3'
+	implementation 'io.reactivex:rxjava:1.2.4'
+	implementation 'io.reactivex:rxandroid:1.2.1'
 }

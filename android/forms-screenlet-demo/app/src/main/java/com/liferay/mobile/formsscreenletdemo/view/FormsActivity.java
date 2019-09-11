@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.NonNull;
 import com.google.android.material.snackbar.Snackbar;
+
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,29 +16,20 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
-import com.liferay.apio.consumer.cache.ThingsCache;
-import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.formsscreenletdemo.R;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.screens.base.ModalProgressBarWithLabel;
 import com.liferay.mobile.screens.ddm.form.DDMFormListener;
 import com.liferay.mobile.screens.ddm.form.DDMFormScreenlet;
 import com.liferay.mobile.screens.ddm.form.model.FormInstance;
-import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
-import com.liferay.mobile.screens.thingscreenlet.screens.events.ScreenletEvents;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.BaseView;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.Scenario;
+import com.liferay.mobile.screens.ddm.form.model.FormInstanceRecord;
 import com.liferay.mobile.screens.util.AndroidUtil;
-import com.liferay.mobile.screens.viewsets.defaultviews.ddm.events.FormEvents;
-import kotlin.Unit;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Luísa Lima
  */
 public class FormsActivity extends AppCompatActivity
-    implements ScreenletEvents, SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnChildScrollUpCallback,
+    implements SwipeRefreshLayout.OnRefreshListener, SwipeRefreshLayout.OnChildScrollUpCallback,
     DDMFormListener {
 
     private LinearLayout errorLayout;
@@ -55,8 +48,7 @@ public class FormsActivity extends AppCompatActivity
         progressBar = findViewById(R.id.liferay_modal_progress);
         swipeRefreshLayout = findViewById(R.id.pull_to_refresh);
         progressBar.disableDimBackground();
-        formsScreenlet.getScreenlet().setScreenletEvents(this);
-        formsScreenlet.setListener(this);
+        formsScreenlet.setDDMFormListener(this);
         swipeRefreshLayout.setOnRefreshListener(this);
 
         DemoUtil.setLightStatusBar(this, getWindow());
@@ -69,9 +61,6 @@ public class FormsActivity extends AppCompatActivity
     private void loadResource() {
         progressBar.show(getString(R.string.loading_form));
         formsScreenlet.setVisibility(View.GONE);
-
-        ThingsCache.clearCache();
-
         formsScreenlet.load();
     }
 
@@ -102,7 +91,7 @@ public class FormsActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
     }
 
-    private Unit showError(String message) {
+    private void showError(String message) {
         hideProgress();
 
         int icon = R.drawable.default_error_icon;
@@ -111,60 +100,50 @@ public class FormsActivity extends AppCompatActivity
             ContextCompat.getColor(this, com.liferay.mobile.screens.viewsets.lexicon.R.color.lightRed);
 
         AndroidUtil.showCustomSnackbar(formsScreenlet, message, Snackbar.LENGTH_LONG, backgroundColor, textColor, icon);
-
-        return Unit.INSTANCE;
     }
 
     @Override
-    public <T extends BaseView> void onCustomEvent(@NotNull String name, @NotNull ThingScreenlet screenlet,
-        @Nullable T parentView, @NotNull Thing thing) {
-        if (name.equals(FormEvents.SUBMIT_SUCCESS.name())) {
-            LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-            View layout = inflater.inflate(R.layout.toast_layout_default, findViewById(R.id.toast_layout_default));
-
-            Toast toast = new Toast(getApplicationContext());
-            toast.setDuration(Toast.LENGTH_LONG);
-            toast.setView(layout);
-            toast.show();
-
-            new Handler().postDelayed(this::finish, 500);
-        }
+    public boolean canChildScrollUp(@NonNull SwipeRefreshLayout parent, @Nullable View child) {
+        return false;
     }
 
     @Override
-    public void onRefresh() {
-        loadResource();
+    public void onDraftLoaded(@NonNull FormInstanceRecord formInstanceRecord) {
+
     }
 
     @Override
-    public void onError(@NotNull Exception e) {
-        showError(e.getMessage());
+    public void onDraftSaved(@NonNull FormInstanceRecord formInstanceRecord) {
+
     }
 
     @Override
-    public void onFormLoaded(@NotNull FormInstance formInstance) {
+    public void onError(Throwable throwable) {
+        showError(throwable.getMessage());
+    }
+
+    @Override
+    public void onFormLoaded(@NonNull FormInstance formInstance) {
         hideProgress();
         errorLayout.setVisibility(View.GONE);
         recyclerViewWorkaround();
     }
 
-    @Nullable
     @Override
-    public <T extends BaseView> Integer onGetCustomLayout(@NotNull ThingScreenlet screenlet, @Nullable T parentView,
-        @NotNull Thing thing, @NotNull Scenario scenario) {
-        return null;
+    public void onFormSubmitted(@NonNull FormInstanceRecord formInstanceRecord) {
+        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
+        View layout = inflater.inflate(R.layout.toast_layout_default, findViewById(R.id.toast_layout_default));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+
+        new Handler().postDelayed(this::finish, 500);
     }
 
     @Override
-    public boolean canChildScrollUp(@NonNull SwipeRefreshLayout parent,
-        @androidx.annotation.Nullable View child) {
-        return true;
-    }
-
-    @Nullable
-    @Override
-    public <T extends BaseView> View.OnClickListener onClickEvent(@NotNull T baseView, @NotNull View view,
-        @NotNull Thing thing) {
-        return null;
+    public void onRefresh() {
+        loadResource();
     }
 }

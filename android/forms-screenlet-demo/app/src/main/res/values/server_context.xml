@@ -30,4 +30,8 @@
     <!--Tips and Utilities values-->
     <!--Asset Publisher's filter - Configuration Template name-->
     <string name="tips_and_utilities_filter">Tips and Utilities</string>
+
+    <!--Blog Postings values-->
+    <!--Asset Publisher's filter - Configuration Template name-->
+    <string name="blog_postings_filter">Blog Postings</string>
 </resources>

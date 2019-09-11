@@ -64,10 +64,6 @@
 		</activity>
 		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.HelpActivity">
 		</activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.FAQListActivity">
-		</activity>
-		<activity android:name="com.liferay.mobile.formsscreenletdemo.view.FAQDetailActivity">
-		</activity>
 
 		<receiver
 			android:name=".push.PushReceiver"

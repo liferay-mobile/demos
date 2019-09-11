@@ -5,39 +5,30 @@ import android.os.Bundle;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-import com.liferay.apio.consumer.cache.ThingsCache;
-import com.liferay.apio.consumer.model.Thing;
-import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
-import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
+import com.liferay.mobile.screens.asset.list.AssetListScreenlet;
 import com.liferay.mobile.screens.base.list.BaseListListener;
 import com.liferay.mobile.screens.blogs.BlogsEntry;
-import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
-import com.liferay.mobile.screens.thingscreenlet.screens.events.ScreenletEvents;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.BaseView;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.Scenario;
-import kotlin.Unit;
 import com.liferay.mobile.formsscreenletdemo.R;
-import com.liferay.mobile.formsscreenletdemo.util.Constants;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
  * @author Paulo Cruz
  */
 public class BlogPostingsActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener,
-	ScreenletEvents {
+	BaseListListener<BlogsEntry> {
 
 	private SwipeRefreshLayout swipeRefreshLayout;
-	private ThingScreenlet blogsScreenlet;
+	private AssetListScreenlet blogListScreenlet;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_blog_postings);
 
-		blogsScreenlet = findViewById(R.id.blogs_screenlet);
-		blogsScreenlet.setScreenletEvents(this);
+		blogListScreenlet = findViewById(R.id.blogs_screenlet);
+		blogListScreenlet.setListener(this);
+		blogListScreenlet.setPortletItemName(getString(R.string.blog_postings_filter));
 
 		swipeRefreshLayout = findViewById(R.id.pull_to_refresh);
 		swipeRefreshLayout.setOnRefreshListener(this);
@@ -50,30 +41,17 @@ public class BlogPostingsActivity extends AppCompatActivity implements SwipeRefr
 	private void loadResource() {
 		showProgress();
 
-		ThingsCache.clearCache();
-
-		String url = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
-			Constants.CONTENT_SPACE_ID, ResourceType.BLOGS);
-
-		blogsScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {
-			hideProgress();
-
-			return Unit.INSTANCE;
-		}, exception -> {
-			hideProgress();
-
-			return Unit.INSTANCE;
-		});
+		blogListScreenlet.loadPage(0);
 	}
 
 	private void hideProgress() {
 		swipeRefreshLayout.setRefreshing(false);
-		blogsScreenlet.setVisibility(View.VISIBLE);
+		blogListScreenlet.setVisibility(View.VISIBLE);
 	}
 
 	private void showProgress() {
 		swipeRefreshLayout.setRefreshing(true);
-		blogsScreenlet.setVisibility(View.GONE);
+		blogListScreenlet.setVisibility(View.GONE);
 	}
 
 	@Override
@@ -81,28 +59,25 @@ public class BlogPostingsActivity extends AppCompatActivity implements SwipeRefr
 		loadResource();
 	}
 
-	@Nullable
 	@Override
-	public <T extends BaseView> View.OnClickListener onClickEvent(@NotNull T baseView, @NotNull View view,
-		@NotNull Thing thing) {
+	public void onListPageFailed(int i, Exception e) {
+		hideProgress();
+	}
 
+	@Override
+	public void onListPageReceived(int i, int i1, List<BlogsEntry> list, int i2) {
+		hideProgress();
+	}
+
+	@Override
+	public void onListItemSelected(BlogsEntry blogsEntry, View view) {
 		Intent intent = new Intent(BlogPostingsActivity.this, BlogPostingItemActivity.class);
-		intent.putExtra(BlogPostingItemActivity.THING_ID_EXTRA, thing.getId());
+		intent.putExtra(BlogPostingItemActivity.BLOG_POST_ID, blogsEntry.getEntryId());
 		startActivity(intent);
-
-		return null;
-	}
-
-	@Nullable
-	@Override
-	public <T extends BaseView> Integer onGetCustomLayout(@NotNull ThingScreenlet screenlet, @Nullable T parentView,
-		@NotNull Thing thing, @NotNull Scenario scenario) {
-		return null;
 	}
 
 	@Override
-	public <T extends BaseView> void onCustomEvent(@NotNull String name, @NotNull ThingScreenlet screenlet,
-		@Nullable T parentView, @NotNull Thing thing) {
+	public void error(Exception e, String userAction) {
 
 	}
 }

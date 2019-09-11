@@ -2,10 +2,8 @@ package com.liferay.mobile.formsscreenletdemo.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.StringRes;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,12 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.liferay.apio.consumer.model.Thing;
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.formsscreenletdemo.R;
-import com.liferay.mobile.formsscreenletdemo.service.APIOFetchResourceService;
-import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
-import com.liferay.mobile.formsscreenletdemo.util.ResourceType;
 import com.liferay.mobile.formsscreenletdemo.view.login.LoginActivity;
 import com.liferay.mobile.formsscreenletdemo.view.sessions.SpecialOffersActivity;
 import com.liferay.mobile.formsscreenletdemo.view.sessions.TakeCareListActivity;
@@ -31,12 +25,12 @@ import com.liferay.mobile.screens.context.SessionContext;
 import com.liferay.mobile.screens.context.User;
 import com.liferay.mobile.screens.context.storage.CredentialsStorageBuilder;
 import com.liferay.mobile.screens.ddm.form.model.FormInstanceRecord;
-import com.liferay.mobile.screens.ddm.form.service.APIOFetchLatestDraftService;
-import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.Custom;
+import com.liferay.mobile.screens.ddm.form.service.openapi.FetchLatestDraftServiceOpenAPI;
+import com.liferay.mobile.screens.userportrait.UserPortraitScreenlet;
 import com.liferay.mobile.screens.util.LiferayLogger;
-import kotlin.Unit;
 import org.json.JSONException;
+
+import rx.android.schedulers.AndroidSchedulers;
 
 import static java.lang.Long.parseLong;
 
@@ -46,8 +40,10 @@ import static java.lang.Long.parseLong;
  */
 public class HomeActivity extends AppCompatActivity {
 
+	private FetchLatestDraftServiceOpenAPI client;
+
 	private DrawerLayout drawerLayout;
-	private ThingScreenlet userPortrait;
+	private UserPortraitScreenlet userPortrait;
 	private Toolbar toolbar;
 
 	@Override
@@ -61,6 +57,9 @@ public class HomeActivity extends AppCompatActivity {
 		Button formButton = findViewById(R.id.forms_button);
 		formButton.setOnClickListener(this::startFormActivity);
 		long formInstanceId = parseLong(getString(R.string.insurance_form_id));
+
+		String serverURL = getResources().getString(R.string.liferay_server);
+		client = new FetchLatestDraftServiceOpenAPI(serverURL);
 
 		if (savedInstanceState == null) {
 			checkForDraft(formInstanceId);
@@ -93,9 +92,8 @@ public class HomeActivity extends AppCompatActivity {
 				} catch (JSONException e) {
 					LiferayLogger.e(e.getMessage(), e);
 				}
-			}).onFailure(e -> {
-				LiferayLogger.e(e.getMessage(), e);
-			}).register(this, pushSenderId);
+			}).onFailure(e -> LiferayLogger.e(e.getMessage(), e)
+			).register(this, pushSenderId);
 
 		} catch (Exception e) {
 			LiferayLogger.e(e.getMessage(), e);
@@ -162,43 +160,27 @@ public class HomeActivity extends AppCompatActivity {
 	}
 
 	private void checkForDraft(long formInstanceId) {
-		String server = getResources().getString(R.string.liferay_server);
-		String url = DemoUtil.getResourcePath(server, formInstanceId, ResourceType.FORMS);
-
-		new APIOFetchResourceService().fetchResource(url, this::onThingLoaded, this::logError);
+		client.fetchLatestDraft(formInstanceId).observeOn(
+			AndroidSchedulers.mainThread()
+		).subscribe(
+			this::onDraftLoaded,
+			this::logError
+		);
 	}
 
-	private Unit logError(Exception e) {
+	private void logError(Throwable e) {
 		LiferayLogger.e(e.getMessage());
-		return Unit.INSTANCE;
 	}
 
-	private Unit onThingLoaded(Thing thing) {
-		loadDraft(thing);
-		return Unit.INSTANCE;
+	private void loadPortrait() {
+		userPortrait.setUserId(SessionContext.getUserId());
+		userPortrait.load();
 	}
 
-	private void loadDraft(Thing thing) {
-		new APIOFetchLatestDraftService().fetchLatestDraft(thing, this::onDraftLoaded, this::logError);
-	}
-
-	private void loadPortrait() throws Exception {
-		String url = DemoUtil.getResourcePath(getResources().getString(R.string.liferay_server),
-			SessionContext.getUserId(), ResourceType.PERSON);
-
-		userPortrait.load(url, new Custom("portrait"), SessionContext.getCredentialsFromCurrentSession());
-	}
-
-	private Unit onDraftLoaded(Thing thing) {
-		if (thing != null) {
-			FormInstanceRecord formInstanceRecord = FormInstanceRecord.getConverter().invoke(thing);
-
-			if (formInstanceRecord != null) {
-				setupDialog();
-			}
+	private void onDraftLoaded(FormInstanceRecord formInstanceRecord) {
+		if (formInstanceRecord != null) {
+			setupDialog();
 		}
-
-		return Unit.INSTANCE;
 	}
 
 	private void setupDrawerContent(NavigationView navigationView) {
