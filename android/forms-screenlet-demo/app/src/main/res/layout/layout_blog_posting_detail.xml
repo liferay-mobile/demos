@@ -6,14 +6,6 @@
 	android:layout_height="match_parent"
 	>
 
-	<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
-		android:id="@+id/creator_avatar"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:visibility="gone"
-		app:scenario="portrait"
-		/>
-
 	<TextView
 		android:id="@+id/headline"
 		android:layout_width="wrap_content"

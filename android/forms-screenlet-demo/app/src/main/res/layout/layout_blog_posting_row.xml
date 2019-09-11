@@ -11,14 +11,6 @@
 		android:layout_height="wrap_content"
 		>
 
-		<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
-			android:id="@+id/creator_avatar"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:visibility="gone"
-			app:scenario="portrait"
-			/>
-
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -52,16 +44,15 @@
 				/>
 
 		</LinearLayout>
-
+-
 		<ImageView
 			android:id="@+id/arrow"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_alignParentEnd="true"
-			android:layout_alignParentRight="true"
 			android:layout_centerVertical="true"
 			android:contentDescription="@string/arrow_to_indicate_clickable"
-			android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+			android:src="@drawable/default_arrow"
 			android:visibility="gone"
 			/>
 		

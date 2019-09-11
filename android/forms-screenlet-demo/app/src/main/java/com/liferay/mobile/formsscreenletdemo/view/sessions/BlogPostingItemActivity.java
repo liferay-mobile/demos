@@ -1,10 +1,9 @@
 package com.liferay.mobile.formsscreenletdemo.view.sessions;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-import com.liferay.apio.consumer.cache.ThingsCache;
 import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
 import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
 import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
