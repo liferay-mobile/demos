@@ -4,28 +4,28 @@ import android.os.Bundle;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-import com.liferay.mobile.formsscreenletdemo.util.DemoUtil;
-import com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet;
-import com.liferay.mobile.screens.thingscreenlet.screens.views.Detail;
-import kotlin.Unit;
 import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.screens.asset.AssetEntry;
+import com.liferay.mobile.screens.asset.display.AssetDisplayListener;
+import com.liferay.mobile.screens.blogs.BlogsEntryDisplayScreenlet;
 
 /**
  * @author Paulo Cruz
  */
-public class BlogPostingItemActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
+public class BlogPostingItemActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener, AssetDisplayListener {
 
-	public static final String THING_ID_EXTRA = "thingId";
+	public static final String BLOG_POST_ID = "blogPostId";
 
 	private SwipeRefreshLayout swipeRefreshLayout;
-	private ThingScreenlet blogItemScreenlet;
+	private BlogsEntryDisplayScreenlet blogEntryScreenlet;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_blog_posting_item);
 
-		blogItemScreenlet = findViewById(R.id.blog_item_screenlet);
+		blogEntryScreenlet = findViewById(R.id.blog_item_screenlet);
+		blogEntryScreenlet.setListener(this);
 		swipeRefreshLayout = findViewById(R.id.pull_to_refresh);
 		swipeRefreshLayout.setOnRefreshListener(this);
 
@@ -37,33 +37,39 @@ public class BlogPostingItemActivity extends AppCompatActivity implements SwipeR
 	private void loadResource() {
 		showProgress();
 
-		ThingsCache.clearCache();
+		String blogEntryIdStr = getIntent().getStringExtra(BLOG_POST_ID);
 
-		String url = getIntent().getStringExtra(THING_ID_EXTRA);
+		if (blogEntryIdStr != null) {
+			long blogEntryId = Long.parseLong(blogEntryIdStr);
 
-		blogItemScreenlet.load(url, Detail.INSTANCE, DemoUtil.getCredentials(), thingScreenlet -> {
-			hideProgress();
+			blogEntryScreenlet.setEntryId(blogEntryId);
 
-			return Unit.INSTANCE;
-		}, exception -> {
-			hideProgress();
-
-			return Unit.INSTANCE;
-		});
+			blogEntryScreenlet.load();
+		}
 	}
 
 	private void hideProgress() {
 		swipeRefreshLayout.setRefreshing(false);
-		blogItemScreenlet.setVisibility(View.VISIBLE);
+		blogEntryScreenlet.setVisibility(View.VISIBLE);
 	}
 
 	private void showProgress() {
 		swipeRefreshLayout.setRefreshing(true);
-		blogItemScreenlet.setVisibility(View.GONE);
+		blogEntryScreenlet.setVisibility(View.GONE);
 	}
 
 	@Override
 	public void onRefresh() {
 		loadResource();
+	}
+
+	@Override
+	public void onRetrieveAssetSuccess(AssetEntry assetEntry) {
+		hideProgress();
+	}
+
+	@Override
+	public void error(Exception e, String userAction) {
+		hideProgress();
 	}
 }

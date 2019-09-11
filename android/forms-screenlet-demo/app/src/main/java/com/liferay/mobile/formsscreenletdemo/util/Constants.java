@@ -4,14 +4,7 @@ package com.liferay.mobile.formsscreenletdemo.util;
  * @author Victor Oliveira
  */
 public interface Constants {
-	long CONTENT_SPACE_ID = 37252;
-
-	String BLOG_POSTING_CLASS_NAME = "com.liferay.blogs.model.BlogsEntry";
-	String BLOG_POSTING_ENDPOINT = "/o/api/p/content-space/%d/blog-posting";
-	String FORM_ENDPOINT = "/o/api/p/form/%d?embedded=structure";
-	String PERSON_ENDPOINT = "/o/api/p/user-account/%d";
 	String ENTRY_ID_KEY = "entryId";
-	String THING_ID_KEY = "thingId";
 	String ASSET_ENTRY_URL = "url";
 	String ASSET_ENTRY_TITLE = "title";
 }

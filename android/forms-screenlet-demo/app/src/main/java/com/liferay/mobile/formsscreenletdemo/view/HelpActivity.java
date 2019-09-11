@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import com.liferay.mobile.formsscreenletdemo.R;
+import com.liferay.mobile.formsscreenletdemo.view.sessions.BlogPostingsActivity;
 
 /**
  * @author Luísa Lima
@@ -21,7 +22,7 @@ public class HelpActivity extends AppCompatActivity {
 	}
 
 	private void startActivity() {
-		Intent intent = new Intent(this, FAQListActivity.class);
+		Intent intent = new Intent(this, BlogPostingsActivity.class);
 		startActivity(intent);
 	}
 }

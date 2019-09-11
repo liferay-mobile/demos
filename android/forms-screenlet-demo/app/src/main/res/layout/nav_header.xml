@@ -10,7 +10,7 @@
 	android:background="@drawable/bottom_separator"
 	>
 
-	<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+	<com.liferay.mobile.screens.userportrait.UserPortraitScreenlet
 		android:id="@+id/user_portrait"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"

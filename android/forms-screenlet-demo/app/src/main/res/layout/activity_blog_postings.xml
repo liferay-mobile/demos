@@ -40,7 +40,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			>
-			<com.liferay.mobile.screens.thingscreenlet.screens.ThingScreenlet
+			<com.liferay.mobile.screens.asset.list.AssetListScreenlet
 				android:id="@+id/blogs_screenlet"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
